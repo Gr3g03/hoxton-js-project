@@ -110,6 +110,10 @@ body{
     background-color: rgba(54, 54, 197, 0.753);
 }
 
+.header-logo{
+    display: none;
+}
+
 
 main{
     width: 100%;
@@ -163,13 +167,13 @@ main{
   
   .recent-searches__ {
     display: grid;
-    grid-template-columns: 70px 1fr auto;
+    grid-template-columns: 80px 1fr auto;
   }
   
   .logo {
     display: grid;
     border: 1px solid black;
-    width: 70px;
+    width: 80px;
   }
   .company-info {
     display: grid;
@@ -195,6 +199,18 @@ main{
     border: 1px solid black;
     grid-template-rows: 1fr 1fr;
     width: 5rem;
+  }
+
+
+  .suggested-searches {
+    display: grid;
+    /* border: 1px solid black; */
+  }
+  
+  .suggested {
+    display: grid;
+    grid-template-rows: 80px 20px;
+    border: 1px solid black;
   }
 
 

@@ -192,8 +192,8 @@ function renderMain() {
     ulEL.append(li1El, li2El, li3El)
 
     companyDataEl.append(ulEL)
-
     divinfoEL.append(companyName, companyDataEl)
+
 
 
     // const abutInfoEl = document.createElement('div')
@@ -207,10 +207,26 @@ function renderMain() {
 
     // abutInfoEl.append(h31el, h32el)
 
+    const suggestedSearches = document.createElement('section')
+    suggestedSearches.setAttribute('class', 'suggested-searches')
+
+
+    const suggesteddivEL = document.createElement('div')
+    suggesteddivEL.setAttribute('class', 'suggested')
+
+    const svgEL = document.createElement('img')
+    svgEL.setAttribute('src', '#')
+    svgEL.setAttribute('alt', 'name')
+
+    const industryName = document.createElement('h3')
+    industryName.textContent = 'industry Name'
+
+    suggesteddivEL.append(svgEL, industryName)
+    suggestedSearches.append(suggesteddivEL)
     recentSearchesContainer.append(divLogoEL, divinfoEL)
     recentSearches.append(recentSearchesContainer)
 
-    mainEl.append(searchSection, recentSearches)
+    mainEl.append(searchSection, recentSearches, suggestedSearches)
 
 }
 
