@@ -1,0 +1,205 @@
+
+function renderHeader() {
+
+    const headerEl = document.createElement('header')
+    document.body.append(headerEl)
+
+    //Left Header
+    const leftHeader = document.createElement('section')
+    leftHeader.setAttribute('class', 'left-header')
+    headerEl.append(leftHeader)
+
+    const leftHeaderNav = document.createElement('nav')
+    leftHeader.append(leftHeaderNav)
+
+    const leftNavUl = document.createElement('ul')
+    leftNavUl.setAttribute('class', 'left-nav')
+    leftHeaderNav.append(leftNavUl)
+
+    const findJobsLi = document.createElement('li')
+    findJobsLi.setAttribute('class', 'left-nav-items')
+    const findJobsAEl = document.createElement('a')
+    findJobsAEl.setAttribute('href', '#')
+    findJobsAEl.textContent = 'Find Jobs'
+    findJobsLi.append(findJobsAEl)
+
+    const findSalariesLi = document.createElement('li')
+    findSalariesLi.setAttribute('class', 'left-nav-items')
+    const findSalariesAEl = document.createElement('a')
+    findSalariesAEl.setAttribute('href', './pages/slaries.html')
+    findSalariesAEl.textContent = 'Find Salaries'
+    findSalariesLi.append(findSalariesAEl)
+
+    const reviewsLi = document.createElement('li')
+    reviewsLi.setAttribute('class', 'left-nav-items')
+    const reviewsAEl = document.createElement('a')
+    reviewsAEl.setAttribute('href', './pages/companyreviews.html')
+    reviewsAEl.textContent = 'Company Reviews'
+    reviewsLi.append(reviewsAEl)
+
+    const headerLogoLi = document.createElement('li')
+    headerLogoLi.setAttribute('class', 'header-logo')
+    const headerLogoAEl = document.createElement('a')
+    headerLogoAEl.setAttribute('href', '#')
+    const headerLogoh1 = document.createElement('h1')
+    headerLogoh1.textContent = 'LOGO'
+    headerLogoLi.append(headerLogoAEl)
+    headerLogoAEl.append(headerLogoh1)
+
+
+    leftNavUl.append(findJobsLi, findSalariesLi, reviewsLi, headerLogoLi)
+
+    //Right Header
+
+    const rightHeader = document.createElement('section')
+    rightHeader.setAttribute('class', 'right-header')
+    headerEl.append(rightHeader)
+
+    const rightNav = document.createElement('nav')
+    rightNav.setAttribute('class', 'right-nav')
+    rightHeader.append(rightNav)
+
+    const rightNavUl = document.createElement('ul')
+    rightNavUl.setAttribute('class', 'right-nav')
+    rightNav.append(rightNavUl)
+
+    const uploadLi = document.createElement('li')
+    uploadLi.setAttribute('class', 'upload')
+    const uploadALi = document.createElement('a')
+    uploadALi.setAttribute('href', './pages/uploadcv.html')
+    uploadALi.textContent = 'Upload Resume'
+    uploadLi.append(uploadALi)
+
+    const signInLi = document.createElement('li')
+    signInLi.setAttribute('class', 'sign-in')
+    const signInALi = document.createElement('a')
+    signInALi.setAttribute('href', './pages/signin.html')
+    signInALi.textContent = 'Sign In'
+    signInLi.append(signInALi)
+
+    rightNavUl.append(uploadLi, signInLi)
+
+}
+
+
+function renderMain() {
+    const mainEl = document.createElement('main')
+    document.body.append(mainEl)
+
+    const searchSection = document.createElement('section')
+    searchSection.setAttribute('class', 'search-section')
+    mainEl.append(searchSection)
+
+    const searchDiv = document.createElement('div')
+    searchDiv.setAttribute('class', 'search-section__')
+    searchSection.append(searchDiv)
+
+    const inputJobEl = document.createElement('input')
+    inputJobEl.setAttribute('class', 'search-box')
+    inputJobEl.setAttribute('type', 'search')
+    inputJobEl.setAttribute('placeholder', 'job title, keywords')
+
+    const inputCityEl = document.createElement('input')
+    inputCityEl.setAttribute('class', 'search-box')
+    inputCityEl.setAttribute('type', 'search')
+    inputCityEl.setAttribute('placeholder', 'city, state')
+
+    const searchButton = document.createElement('button')
+    searchButton.setAttribute('class', 'search-button')
+    searchButton.textContent = 'Find Jobs'
+
+    searchDiv.append(inputJobEl, inputCityEl, searchButton)
+
+    const postFindEl = document.createElement('span')
+    postFindEl.setAttribute('class', 'post-find')
+    searchSection.append(postFindEl)
+
+    const h3PostEl = document.createElement('h3')
+    const aPostEl = document.createElement('a')
+    aPostEl.setAttribute('href', '#')
+    aPostEl.textContent = "Post your job"
+    h3PostEl.append(aPostEl)
+
+    const h3FindEl = document.createElement('h3')
+    const aFindEl = document.createElement('a')
+    aFindEl.setAttribute('href', '#')
+    aFindEl.textContent = "Find employees"
+    h3FindEl.append(aFindEl)
+
+    postFindEl.append(h3PostEl, h3FindEl)
+}
+
+
+function renderFooter() {
+    const footerEl = document.createElement('footer')
+    document.body.append(footerEl)
+
+    const footerNav = document.createElement('section')
+    footerNav.setAttribute('class', 'footer-nav')
+    footerEl.append(footerNav)
+
+    const footerMenuUL = document.createElement('ul')
+    footerMenuUL.setAttribute('class', 'footer-nav-menu')
+    footerNav.append(footerMenuUL)
+
+    const browseJobsLi = document.createElement('li')
+    const browseJobsALi = document.createElement('a')
+    browseJobsALi.setAttribute('href', '#')
+    browseJobsALi.textContent = "Browse Jobs"
+    browseJobsLi.append(browseJobsALi)
+
+    const browseCompaniesLi = document.createElement('li')
+    const browseCompaniesALi = document.createElement('a')
+    browseCompaniesALi.setAttribute('href', '#')
+    browseCompaniesALi.textContent = "Browse Companies"
+    browseCompaniesLi.append(browseCompaniesALi)
+
+    const salariesLi = document.createElement('li')
+    const salariesALi = document.createElement('a')
+    salariesALi.setAttribute('href', '#')
+    salariesALi.textContent = "Salaries"
+    salariesLi.append(salariesALi)
+
+    const findReviewsLi = document.createElement('li')
+    const findReviewsALi = document.createElement('a')
+    findReviewsALi.setAttribute('href', '#')
+    findReviewsALi.textContent = "Find Reviews"
+    findReviewsLi.append(findReviewsALi)
+
+
+    const privacyLi = document.createElement('li')
+    const privacyALi = document.createElement('a')
+    privacyALi.setAttribute('href', '#')
+    privacyALi.textContent = "Privacy"
+    privacyLi.append(privacyALi)
+
+    footerMenuUL.append(browseJobsLi, browseCompaniesLi, salariesLi, findReviewsLi, privacyLi)
+
+    const footerEnd = document.createElement('section')
+    footerEnd.setAttribute('class', 'footer-nav__')
+    footerEl.append(footerEnd)
+
+
+    const h2FooteerEl = document.createElement('h2')
+    h2FooteerEl.textContent = "Let employers find you"
+
+    const h3FooterEl = document.createElement('h3')
+    const h3AFooter = document.createElement('a')
+    h3AFooter.setAttribute('href', './pages/uploadcv.html')
+    h3AFooter.textContent = 'Upload your resume'
+    h3FooterEl.append(h3AFooter)
+
+    footerEnd.append(h2FooteerEl, h3FooterEl)
+
+
+}
+
+function render() {
+    renderHeader()
+    renderMain()
+    renderFooter()
+}
+render()
+
+
+
