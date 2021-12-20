@@ -129,6 +129,8 @@ function renderTopJobsSection(mainEl) {
     const divLogoEL = document.createElement('div')
     divLogoEL.setAttribute('class', 'logo')
 
+    // for (const info of state.companies)
+
     const imgEl = document.createElement('img')
     imgEl.setAttribute('class', 'logo-img')
     imgEl.setAttribute('src', '#')
