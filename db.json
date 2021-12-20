@@ -10,7 +10,9 @@
             "tag": "Accounting",
             "job_types": "Full Time",
             "location": "Durres",
-            "created_at": 20.12
+            "created_at": "20.12.2021",
+            "salary": 330,
+            "reviews": "hello"
         },
         {
             "slug": "Perfaqesues shitje dyqan Vodafone",
@@ -22,7 +24,9 @@
             "tag": "Sales",
             "job_types": "Full time",
             "location": "Durres",
-            "created_at": 20.12
+            "created_at": 20.12,
+            "salary": 330,
+            "reviews": "hello"
         },
         {
             "slug": "Konsulent Imobiliar ne Vollga",
@@ -34,7 +38,9 @@
             "tag": "Consulting",
             "job_types": "Part time",
             "location": "Durres",
-            "created_at": 20.12
+            "created_at": 20.12,
+            "salary": 330,
+            "reviews": "hello"
         },
         {
             "slug": "Financiere ne sektorin e shitjeve",
@@ -46,7 +52,9 @@
             "tag": "Accounting",
             "job_types": "Full time",
             "location": "Durres",
-            "created_at": 20.12
+            "created_at": 20.12,
+            "salary": 330,
+            "reviews": "hello"
         },
         {
             "slug": "assistente-alla-clientela-kiabi-italia-300858",
@@ -56,9 +64,11 @@
             "remote": false,
             "url": "https://arbeitnow.com/view/assistente-alla-clientela-kiabi-italia-300858",
             "tag": "sales",
-            "job_types": "part time",
+            "job_types": "full time",
             "location": "Olgiate Olona",
-            "created_at": 1638006722
+            "created_at": 1638006722,
+            "salary": 330,
+            "reviews": "hello"
         },
         {
             "slug": "sprzedawcamagazynier-jysk-poznan-komorniki-3800-pln-jysk-435302",
@@ -70,7 +80,9 @@
             "tag": "Retail",
             "job_types": "Associate",
             "location": "Poznań",
-            "created_at": 1638006722
+            "created_at": 1638006722,
+            "salary": 330,
+            "reviews": "hello"
         }
     ]
 }
