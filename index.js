@@ -386,13 +386,6 @@ function UploadModal() {
         event.stopPropagation()
     })
 
-    // const closeModal = document.createElement('button')
-    // closeModal.setAttribute('class', 'modal-close-btn')
-    // closeModal.textContent = 'X'
-    // closeModal.addEventListener('click', function btn() {
-    //     state.modal = ''
-    //     render()
-    // })
 
     const signInForm = document.createElement('form')
     signInForm.setAttribute('class', 'sign-in-form')
@@ -446,13 +439,17 @@ function UploadModal() {
     maleGenderInput.setAttribute('class', 'gender')
     maleGenderInput.setAttribute('name', 'gender')
     maleGenderInput.setAttribute('type', 'radio')
-    maleGenderInput.textContent = 'male'
+
 
     const femaleGenderInput = document.createElement('input')
     femaleGenderInput.setAttribute('class', 'gender')
     femaleGenderInput.setAttribute('name', 'gender')
     femaleGenderInput.setAttribute('type', 'radio')
-    femaleGenderInput.textContent = 'Female'
+
+
+    const femaleH4El = document.createElement('h4')
+    femaleH4El.textContent = 'Female'
+    femaleGenderInput.append(femaleH4El)
 
     genderLabel.append(p4el, maleGenderInput, femaleGenderInput)
 
