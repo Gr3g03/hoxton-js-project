@@ -221,6 +221,32 @@ main{
   }
 
 
+  .company-content{
+    display: grid;
+    /* border: 0.3px solid blue; */
+    background-color: whitesmoke;
+}
+
+.about-company a{
+    text-decoration: none;
+    color: black;
+}
+
+.company-section{
+    display: grid;
+    border: 0.3px solid blue;
+    grid-template-columns: 50px 1fr;
+
+}
+
+
+.company-content__{
+    display: grid;
+    border: 0.3px solid blue;
+
+}
+
+
 
 footer {
     margin-top: 2rem;

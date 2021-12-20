@@ -9,6 +9,13 @@ const state = {
 }
 
 
+function fetchDataFromServer() {
+    return fetch('http://localhost:3000/data')
+        .then(function (resp) {
+            return resp.json()
+        })
+}
+
 
 function renderHeader() {
 
@@ -32,20 +39,27 @@ function renderHeader() {
     const findJobsAEl = document.createElement('a')
     findJobsAEl.setAttribute('href', '#')
     findJobsAEl.textContent = 'Find Jobs'
+    findJobsAEl.addEventListener('click', function () {
+        state.selectedPage = 'Find Jobs'
+    })
     findJobsLi.append(findJobsAEl)
 
     const findSalariesLi = document.createElement('li')
     findSalariesLi.setAttribute('class', 'left-nav-items')
     const findSalariesAEl = document.createElement('a')
-    findSalariesAEl.setAttribute('href', './pages/slaries.html')
+    findSalariesAEl.setAttribute('href', '#')
     findSalariesAEl.textContent = 'Find Salaries'
     findSalariesLi.append(findSalariesAEl)
 
     const reviewsLi = document.createElement('li')
     reviewsLi.setAttribute('class', 'left-nav-items')
     const reviewsAEl = document.createElement('a')
-    reviewsAEl.setAttribute('href', './pages/companyreviews.html')
+    reviewsAEl.setAttribute('href', '#')
     reviewsAEl.textContent = 'Company Reviews'
+    reviewsAEl.addEventListener('click', function () {
+        state.selectedPage = 'Company Reviews'
+        render()
+    })
     reviewsLi.append(reviewsAEl)
 
     const headerLogoLi = document.createElement('li')
@@ -105,6 +119,83 @@ function renderHeader() {
 }
 
 
+function renderTopJobsSection(mainEl) {
+    const recentSearches = document.createElement('section')
+    recentSearches.setAttribute('class', 'recent-searches')
+
+    const recentSearchesContainer = document.createElement('div')
+    recentSearchesContainer.setAttribute('class', 'recent-searches__')
+
+    const divLogoEL = document.createElement('div')
+    divLogoEL.setAttribute('class', 'logo')
+
+    const imgEl = document.createElement('img')
+    imgEl.setAttribute('class', 'logo-img')
+    imgEl.setAttribute('src', '#')
+    imgEl.setAttribute('alt', '#')
+
+    divLogoEL.append(imgEl)
+
+    const divinfoEL = document.createElement('div')
+    divinfoEL.setAttribute('class', 'company-info ')
+
+    const companyName = document.createElement('div')
+    companyName.setAttribute('class', 'job-possition')
+    const h2JobInfo = document.createElement('h2')
+    h2JobInfo.textContent = 'Job Possition'
+
+    companyName.append(h2JobInfo)
+
+    const companyDataEl = document.createElement('div')
+    companyDataEl.setAttribute('class', 'company-data')
+
+
+    const ulEL = document.createElement('ul')
+    const li1El = document.createElement('li')
+    li1El.textContent = 'Comapny Name'
+    const li2El = document.createElement('li')
+    li2El.textContent = 'Location'
+    const li3El = document.createElement('li')
+    li3El.textContent = 'Salary'
+    ulEL.append(li1El, li2El, li3El)
+
+    companyDataEl.append(ulEL)
+    divinfoEL.append(companyName, companyDataEl)
+
+    // const abutInfoEl = document.createElement('div')
+    // abutInfoEl.setAttribute('about-info')
+
+    // const h31el = document.createElement('h3')
+    // h31el.textContent = 'full time'
+
+    // const h32el = document.createElement('h3')
+    // h32el.textContent = 'x-hours'
+
+    // abutInfoEl.append(h31el, h32el)
+
+    const suggestedSearches = document.createElement('section')
+    suggestedSearches.setAttribute('class', 'suggested-searches')
+
+
+    const suggesteddivEL = document.createElement('div')
+    suggesteddivEL.setAttribute('class', 'suggested')
+
+    const svgEL = document.createElement('img')
+    svgEL.setAttribute('src', '#')
+    svgEL.setAttribute('alt', 'name')
+
+    const industryName = document.createElement('h3')
+    industryName.textContent = 'industry Name'
+
+    suggesteddivEL.append(svgEL, industryName)
+    suggestedSearches.append(suggesteddivEL)
+    recentSearchesContainer.append(divLogoEL, divinfoEL)
+    recentSearches.append(recentSearchesContainer)
+
+    mainEl.append(recentSearches, suggestedSearches)
+}
+
+
 function renderMain() {
     const mainEl = document.createElement('main')
     document.body.append(mainEl)
@@ -152,81 +243,22 @@ function renderMain() {
     searchSection.append(searchform, postFindEl)
     postFindEl.append(h3PostEl, h3FindEl)
 
-    const recentSearches = document.createElement('section')
-    recentSearches.setAttribute('class', 'recent-searches')
+    mainEl.append(searchSection)
 
-    const recentSearchesContainer = document.createElement('div')
-    recentSearchesContainer.setAttribute('class', 'recent-searches__')
+    if (state.selectedPage !== null) {
+        renderTopJobsSection(mainEl)
+        companyReviews(mainEl)
+    }
 
-    const divLogoEL = document.createElement('div')
-    divLogoEL.setAttribute('class', 'logo')
-
-    const imgEl = document.createElement('img')
-    imgEl.setAttribute('class', 'logo-img')
-    imgEl.setAttribute('src', '#')
-    imgEl.setAttribute('alt', '#')
-
-    divLogoEL.append(imgEl)
-
-    const divinfoEL = document.createElement('div')
-    divinfoEL.setAttribute('class', 'company-info ')
-
-    const companyName = document.createElement('div')
-    companyName.setAttribute('class', 'job-possition')
-    const h2JobInfo = document.createElement('h2')
-    h2JobInfo.textContent = 'Job Possition'
-
-    companyName.append(h2JobInfo)
-
-    const companyDataEl = document.createElement('div')
-    companyDataEl.setAttribute('class', 'company-data')
+    // if (state.selectedPage = 'Company Reviews')
+    else {
+        if (state.selectedPage = 'Company Reviews') {
+            // renderTopJobsSection(mainEl)
+            companyReviews(mainEl)
+        }
+    }
 
 
-    const ulEL = document.createElement('ul')
-    const li1El = document.createElement('li')
-    li1El.textContent = 'Comapny Name'
-    const li2El = document.createElement('li')
-    li2El.textContent = 'Location'
-    const li3El = document.createElement('li')
-    li3El.textContent = 'Salary'
-    ulEL.append(li1El, li2El, li3El)
-
-    companyDataEl.append(ulEL)
-    divinfoEL.append(companyName, companyDataEl)
-
-
-
-    // const abutInfoEl = document.createElement('div')
-    // abutInfoEl.setAttribute('about-info')
-
-    // const h31el = document.createElement('h3')
-    // h31el.textContent = 'full time'
-
-    // const h32el = document.createElement('h3')
-    // h32el.textContent = 'x-hours'
-
-    // abutInfoEl.append(h31el, h32el)
-
-    const suggestedSearches = document.createElement('section')
-    suggestedSearches.setAttribute('class', 'suggested-searches')
-
-
-    const suggesteddivEL = document.createElement('div')
-    suggesteddivEL.setAttribute('class', 'suggested')
-
-    const svgEL = document.createElement('img')
-    svgEL.setAttribute('src', '#')
-    svgEL.setAttribute('alt', 'name')
-
-    const industryName = document.createElement('h3')
-    industryName.textContent = 'industry Name'
-
-    suggesteddivEL.append(svgEL, industryName)
-    suggestedSearches.append(suggesteddivEL)
-    recentSearchesContainer.append(divLogoEL, divinfoEL)
-    recentSearches.append(recentSearchesContainer)
-
-    mainEl.append(searchSection, recentSearches, suggestedSearches)
 
 }
 
@@ -521,6 +553,56 @@ function UploadModal() {
 
 
 
+function companyReviews(mainEl) {
+
+    const companySection = document.createElement('section')
+    companySection.setAttribute('class', 'company-section')
+
+    const contentDiv = document.createElement('div')
+    contentDiv.setAttribute('class', 'company-content')
+    companySection.append(contentDiv)
+
+    const companyContentDiv = document.createElement('div')
+    companyContentDiv.setAttribute('class', 'company-content__')
+    contentDiv.append(companyContentDiv)
+
+    const avatarEl = document.createElement('div')
+    avatarEl.setAttribute('class', 'avatar-logo')
+
+    const imageEL = document.createElement('img')
+    imageEL.setAttribute('src', '#')
+    imageEL.setAttribute('alt', '#')
+    avatarEl.append(imageEL)
+
+
+    const aboutEl = document.createElement('div')
+    aboutEl.setAttribute('class', 'about-company')
+    companyContentDiv.append(avatarEl, aboutEl)
+
+    const aAboutEl = document.createElement('a')
+    aAboutEl.setAttribute('href', '#')
+    const spaneEl = document.createElement('span')
+    aAboutEl.append(spaneEl)
+    const boldEl = document.createElement('b')
+    spaneEl.append(boldEl)
+
+    const nameAEl = document.createElement('a')
+    nameAEl.setAttribute('href', '#')
+    const pNameEl = document.createElement('p')
+    pNameEl.textContent = 'Company name'
+    nameAEl.append(pNameEl)
+
+    const pInfoEl = document.createElement('p')
+    pInfoEl.textContent = 'Company Info'
+
+    aboutEl.append(aAboutEl, nameAEl, pInfoEl)
+    companySection.append(contentDiv, aboutEl)
+    mainEl.append(companySection)
+
+}
+
+
+
 function render() {
     document.body.innerHTML = ''
 
@@ -528,9 +610,12 @@ function render() {
     renderMain()
     renderFooter()
 }
-render()
+// render()
 
 
 function init() {
+
+    fetchDataFromServer().then(companiesData => state.companies = companiesData)
     render()
 }
+init()
