@@ -85,9 +85,14 @@ body{
     gap: 0.5rem;
 }
 
+.sign-in-form{
+    display: grid;
+    gap: 0.5rem;
+}
+
+
 .signin-form{
     display: grid;
-    justify-items: center;
     gap: 0.5rem;
 }
 
@@ -163,6 +168,7 @@ main{
 .recent-searches {
     display: grid;
     border: 1px solid black;
+    height: 60px;
   }
   
   .recent-searches__ {
@@ -179,6 +185,7 @@ main{
     display: grid;
     grid-template-rows: 1fr 1fr;
     border: 1px solid black;
+    height: 60px;
   }
   
   .job-possition {
