@@ -195,6 +195,53 @@ function renderTopJobsSection(mainEl) {
     mainEl.append(recentSearches, suggestedSearches)
 }
 
+function companyReviews(mainEl) {
+
+    const companySection = document.createElement('section')
+    companySection.setAttribute('class', 'company-section')
+
+    const contentDiv = document.createElement('div')
+    contentDiv.setAttribute('class', 'company-content')
+    companySection.append(contentDiv)
+
+    const companyContentDiv = document.createElement('div')
+    companyContentDiv.setAttribute('class', 'company-content__')
+    contentDiv.append(companyContentDiv)
+
+    const avatarEl = document.createElement('div')
+    avatarEl.setAttribute('class', 'avatar-logo')
+
+    const imageEL = document.createElement('img')
+    imageEL.setAttribute('src', '#')
+    imageEL.setAttribute('alt', '#')
+    avatarEl.append(imageEL)
+
+
+    const aboutEl = document.createElement('div')
+    aboutEl.setAttribute('class', 'about-company')
+    companyContentDiv.append(avatarEl, aboutEl)
+
+    const aAboutEl = document.createElement('a')
+    aAboutEl.setAttribute('href', '#')
+    const spaneEl = document.createElement('span')
+    aAboutEl.append(spaneEl)
+    const boldEl = document.createElement('b')
+    spaneEl.append(boldEl)
+
+    const nameAEl = document.createElement('a')
+    nameAEl.setAttribute('href', '#')
+    const pNameEl = document.createElement('p')
+    pNameEl.textContent = 'Company name'
+    nameAEl.append(pNameEl)
+
+    const pInfoEl = document.createElement('p')
+    pInfoEl.textContent = 'Company Info'
+
+    aboutEl.append(aAboutEl, nameAEl, pInfoEl)
+    companySection.append(contentDiv, aboutEl)
+    mainEl.append(companySection)
+
+}
 
 function renderMain() {
     const mainEl = document.createElement('main')
@@ -551,101 +598,8 @@ function UploadModal() {
     document.body.append(searchBtnWrapper)
 }
 
-function companyReviews() {
-
-    const companySection = document.createElement('section')
-    companySection.setAttribute('class', 'company-section')
-
-    const contentDiv = document.createElement('div')
-    contentDiv.setAttribute('class', 'company-content')
-    companySection.append(contentDiv)
-
-    const companyContentDiv = document.createElement('div')
-    companyContentDiv.setAttribute('company-content__')
-    contentDiv.append(companyContentDiv)
-
-    const avatarEl = document.createElement('div')
-    avatarEl.setAttribute('class', 'avatar-logo')
-
-    const imageEL = document.createElement('img')
-    imageEL.setAttribute('src', '#')
-    imageEL.setAttribute('alt', '#')
-    avatarEl.append(imageEL)
 
 
-    const aboutEl = document.createElement('div')
-    aboutEl.setAttribute('class', 'about-company')
-    companyContentDiv.append(avatarEl, aboutEl)
-
-    const aAboutEl = document.createElement('a')
-    aAboutEl.setAttribute('href', '#')
-    const spaneEl = document.createElement('span')
-    aAboutEl.append(spaneEl)
-    const boldEl = document.createElement('b')
-    spaneEl.append(boldEl)
-
-    const nameAEl = document.createElement('a')
-    nameAEl.setAttribute('href', '#')
-    const pNameEl = document.createElement('p')
-    pNameEl.textContent = 'Company name'
-    nameAEl.append(pNameEl)
-
-    const pInfoEl = document.createElement('p')
-    pInfoEl.textContent = 'Company Info'
-
-    aboutEl.append(aAboutEl, nameAEl, pInfoEl)
-
-}
-
-
-
-function companyReviews(mainEl) {
-
-    const companySection = document.createElement('section')
-    companySection.setAttribute('class', 'company-section')
-
-    const contentDiv = document.createElement('div')
-    contentDiv.setAttribute('class', 'company-content')
-    companySection.append(contentDiv)
-
-    const companyContentDiv = document.createElement('div')
-    companyContentDiv.setAttribute('class', 'company-content__')
-    contentDiv.append(companyContentDiv)
-
-    const avatarEl = document.createElement('div')
-    avatarEl.setAttribute('class', 'avatar-logo')
-
-    const imageEL = document.createElement('img')
-    imageEL.setAttribute('src', '#')
-    imageEL.setAttribute('alt', '#')
-    avatarEl.append(imageEL)
-
-
-    const aboutEl = document.createElement('div')
-    aboutEl.setAttribute('class', 'about-company')
-    companyContentDiv.append(avatarEl, aboutEl)
-
-    const aAboutEl = document.createElement('a')
-    aAboutEl.setAttribute('href', '#')
-    const spaneEl = document.createElement('span')
-    aAboutEl.append(spaneEl)
-    const boldEl = document.createElement('b')
-    spaneEl.append(boldEl)
-
-    const nameAEl = document.createElement('a')
-    nameAEl.setAttribute('href', '#')
-    const pNameEl = document.createElement('p')
-    pNameEl.textContent = 'Company name'
-    nameAEl.append(pNameEl)
-
-    const pInfoEl = document.createElement('p')
-    pInfoEl.textContent = 'Company Info'
-
-    aboutEl.append(aAboutEl, nameAEl, pInfoEl)
-    companySection.append(contentDiv, aboutEl)
-    mainEl.append(companySection)
-
-}
 
 
 
