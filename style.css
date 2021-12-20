@@ -169,17 +169,23 @@ main{
     display: grid;
     border: 1px solid black;
     height: 60px;
+    gap: 0.5rem;
   }
   
   .recent-searches__ {
     display: grid;
     grid-template-columns: 80px 1fr auto;
+   
   }
   
   .logo {
     display: grid;
     border: 1px solid black;
     width: 80px;
+  }
+
+  .logo-img{
+      width: 80px;
   }
   .company-info {
     display: grid;
@@ -211,14 +217,26 @@ main{
 
   .suggested-searches {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px , 0.5fr));
+    margin-top: 10.5rem;
+    align-items: center;
+    gap: 1rem;
+    width: 90vw;
     /* border: 1px solid black; */
+
   }
   
   .suggested {
-    display: grid;
-    grid-template-rows: 80px 20px;
-    border: 1px solid black;
+   display: grid;
+   grid-template-rows: 50px 20px;
+    /* border: 1px solid black; */
   }
+
+  .suggested img{
+    display: grid;
+    width: 100px;
+  }
+
 
 
   .company-content{
