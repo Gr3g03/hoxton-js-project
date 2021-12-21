@@ -256,6 +256,34 @@ function companyReviews(mainEl) {
 
 
     companyWraper.append(contentDiv)
+
+    const wraperReviewsDiv = document.createElement('div')
+    wraperReviewsDiv.setAttribute('class', 'wraper-reviews')
+
+    const reviewsTitle = document.createElement('h2')
+    reviewsTitle.setAttribute('class', 'reviews-head-title')
+    reviewsTitle.textContent = 'Company Reviews'
+
+    const reviewDiv = document.createElement('div')
+    reviewDiv.setAttribute('class', 'review-div')
+    wraperReviewsDiv.append(reviewsTitle, reviewDiv)
+
+    const h3TitleReview = document.createElement('h3')
+    h3TitleReview.setAttribute('class', 'company-title-review')
+    h3TitleReview.textContent = 'Sample Headline'
+
+    const pReview = document.createElement('p')
+    pReview.setAttribute('class', 'text-review')
+    pReview.textContent = "sample text"
+
+    const reviewBtn = document.createElement('button')
+    reviewBtn.setAttribute('class', 'review-btn')
+    reviewBtn.textContent = 'x'
+
+    reviewDiv.append(h3TitleReview, pReview, reviewBtn)
+
+    companyWraper.append(wraperReviewsDiv)
+
     // const companyContentDiv = document.createElement('div')
     // companyContentDiv.setAttribute('class', 'company-content__')
     // contentDiv.append(companyContentDiv)
