@@ -1,0 +1,4 @@
+{
+    "/data": "/data?_embed=reviews",
+    "/data/*": "/data/$1?_embed=reviews"
+}

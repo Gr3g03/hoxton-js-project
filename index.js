@@ -50,16 +50,18 @@ function updateReviewsOnServer(content) {
 }
 
 function filterSearchedElements() {
-    // document.body.innerHTML = ''
+    document.body.innerHTML = ''
     let elemetsToDisplay = state.companies
     if (state.searchByLocation !== '') {
-
         elemetsToDisplay = elemetsToDisplay.filter(items => {
             return items.company_name.toLowerCase().includes(state.searchByLocation.toLocaleLowerCase()
             )
         })
     }
-    return filterSearchedElements()
+    for (item of elemetsToDisplay) {
+        renderMain(item)
+    }
+    // return filterSearchedElements()
 }
 
 
@@ -260,7 +262,7 @@ function sugestedCategorie(item, suggestedSearches) {
 
 }
 
-function companyReviews(mainEl) {
+function companyReviews(mainEl, item) {
     const companyWraper = document.createElement('section')
     companyWraper.setAttribute('class', 'company-wraper')
 
@@ -306,10 +308,12 @@ function companyReviews(mainEl) {
 
     const userInputReview = document.createElement('input')
 
+    const previewBox = document.createElement('div')
+
 
     const pReview = document.createElement('p')
     pReview.setAttribute('class', 'text-review')
-    pReview.textContent = state.selectedItem.reviews
+    pReview.textContent = state.reviews
 
     const reviewBtn = document.createElement('button')
     reviewBtn.setAttribute('class', 'review-btn')
@@ -317,10 +321,11 @@ function companyReviews(mainEl) {
     reviewBtn.addEventListener('click', function () {
         deleteReviewFromServer.reviews.id
     })
+
     pReview.append(reviewBtn)
 
-
-    reviewDiv.append(h3TitleReview, pReview)
+    previewBox.append(pReview)
+    reviewDiv.append(h3TitleReview, previewBox)
 
     companyWraper.append(wraperReviewsDiv)
 
@@ -360,11 +365,6 @@ function companyReviews(mainEl) {
     submitBtn.textContent = 'Submit'
 
     reviewsForm.append(inputImgEl, companyNameEl, titleNameEl, descriptionEl, submitBtn)
-
-
-
-
-
     mainEl.append(companyWraper, formSection)
 
 

@@ -26,8 +26,7 @@
       "job_types": "Full time",
       "location": "Tirane",
       "created_at": 20.12,
-      "salary": 330,
-      "reviews": "hello"
+      "salary": 330
     },
     {
       "id": 3,
@@ -41,8 +40,7 @@
       "job_types": "Part time",
       "location": "Durres",
       "created_at": 20.12,
-      "salary": 330,
-      "reviews": "hello"
+      "salary": 330
     },
     {
       "id": 4,
@@ -56,8 +54,7 @@
       "job_types": "Full time",
       "location": "Tirane",
       "created_at": 20.12,
-      "salary": 330,
-      "reviews": "hello"
+      "salary": 330
     },
     {
       "id": 5,
@@ -71,8 +68,7 @@
       "job_types": "full time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330,
-      "reviews": "hello"
+      "salary": 330
     },
     {
       "id": 6,
@@ -86,8 +82,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330,
-      "reviews": "hello"
+      "salary": 330
     },
     {
       "id": 7,
@@ -101,8 +96,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330,
-      "reviews": "I am interesting"
+      "salary": 330
     },
     {
       "id": 8,
@@ -116,8 +110,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330,
-      "reviews": "I am interesting"
+      "salary": 330
     },
     {
       "id": 9,
@@ -131,8 +124,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330,
-      "reviews": "I am interesting"
+      "salary": 330
     },
     {
       "id": 10,
@@ -146,38 +138,39 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330,
-      "reviews": "I am interesting"
+      "salary": 330
     }
   ],
   "reviews": [
     {
       "id": 2,
-      "content": "Jam i interesuar"
+      "content": "Jam i interesuar",
+      "dataId": 2
     },
     {
       "id": 3,
-      "content": "Kur mbyllet aplikimi"
+      "content": "Kur mbyllet aplikimi",
+      "dataId": 3
     },
     {
       "id": 4,
-      "content": "Si jane oraret?"
+      "content": "Si jane oraret?",
+      "dataId": 4
     },
     {
       "id": 5,
-      "content": "Kur mund te paraqitem per interviste?"
+      "content": "Kur mund te paraqitem per interviste?",
+      "dataId": 5
     },
     {
       "id": 6,
-      "content": "Jam i interesuar"
+      "content": "Jam i interesuar",
+      "dataId": 6
     },
     {
       "id": 7,
-      "content": "Ku ndodheni?"
-    },
-    {
-      "id": 1,
-      "content": "abcd"
+      "content": "Ku ndodheni?",
+      "dataId": 7
     }
   ]
 }
