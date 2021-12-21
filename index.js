@@ -19,25 +19,53 @@ function fetchDataFromServer() {
 }
 
 
-function deleteReviewFromServer() {
+function deleteReviewFromServer(id) {
     return fetch(`http://localhost:3000/reviews/${id}`, {
         method: "DELETE"
-    });
+    }).then(resp => resp.json())
+}
+
+function createReviewsOnServer(id, content) {
+    return fetch('http://localhost:3000/reviews', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: id,
+            content: content
+        })
+    }).then(resp => resp.json())
 }
 
 
-function postItemsToServer() {
-
+function updateReviewsOnServer(content) {
+    return fetch(`http://localhost:3000/reviews/${reviews.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(content)
+    }).then(resp => resp.json())
 }
 
 function filterSearchedElements() {
-    if (state.searchByLocation !== '') {
-        let elemetsToDisplay = state.companies
-        elemetsToDisplay = elemetsToDisplay.filter(items => {
-            return items.company_name.toLowerCase().includes(state.searchByLocation.toLocaleLowerCase())
-        })
-    }
+    // document.body.innerHTML = ''
+
+    // if (state.searchByLocation !== '') 
+    let elemetsToDisplay = state.companies
+    elemetsToDisplay = elemetsToDisplay.filter(items => {
+        return items.company_name.toLowerCase().includes(state.searchByLocation.toLocaleLowerCase()
+        )
+
+    })
+
+    // for (const item of elemetsToDisplay) {
+    //     renderMain(items)
+
+    // }
 }
+
 
 function companiesToDisplay() {
     let companiesToDisplay = state.companies
@@ -290,6 +318,9 @@ function companyReviews(mainEl) {
     const reviewBtn = document.createElement('button')
     reviewBtn.setAttribute('class', 'review-btn')
     reviewBtn.textContent = 'x'
+    reviewBtn.addEventListener('click', function () {
+        deleteReviewFromServer.reviews.id
+    })
     pReview.append(reviewBtn)
 
 
@@ -301,9 +332,9 @@ function companyReviews(mainEl) {
     mainEl.append(companyWraper)
 }
 
-function prodductPage() {
+// function prodductPage() {
 
-}
+// }
 
 
 
