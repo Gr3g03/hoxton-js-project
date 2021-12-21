@@ -297,8 +297,50 @@ function companyReviews(mainEl) {
 
     companyWraper.append(wraperReviewsDiv)
 
+    /// form section
 
-    mainEl.append(companyWraper)
+    const formSection = document.createElement('section')
+    formSection.setAttribute('class', 'form-section')
+
+    const reviewsForm = document.createElement('form')
+    reviewsForm.setAttribute('class', 'add-reviws-form')
+    formSection.append(reviewsForm)
+
+
+    const inputImgEl = document.createElement('input')
+    inputImgEl.setAttribute('class', 'input-img')
+    inputImgEl.setAttribute('type', 'text')
+    inputImgEl.setAttribute('placeholder', 'Enter image Url')
+
+    const companyNameEl = document.createElement('input')
+    companyNameEl.setAttribute('type', 'text')
+    companyNameEl.setAttribute('class', 'input-company-name')
+    companyNameEl.setAttribute('placeholder', 'Enter company name')
+
+    const titleNameEl = document.createElement('input')
+    titleNameEl.setAttribute('class', 'input-title')
+    titleNameEl.setAttribute('type', 'text')
+    titleNameEl.setAttribute('placeholder', 'Enter job title')
+
+    const descriptionEl = document.createElement('input')
+    descriptionEl.setAttribute('class', 'description-el')
+    descriptionEl.setAttribute('type', 'text')
+    descriptionEl.setAttribute('placeholder', 'Enter description')
+
+    const submitBtn = document.createElement('button')
+    submitBtn.setAttribute('class', 'submit-button')
+    submitBtn.setAttribute('type', 'submit')
+    submitBtn.textContent = 'Submit'
+
+    reviewsForm.append(inputImgEl, companyNameEl, titleNameEl, descriptionEl, submitBtn)
+
+
+
+
+
+    mainEl.append(companyWraper, formSection)
+
+
 }
 
 function prodductPage() {
