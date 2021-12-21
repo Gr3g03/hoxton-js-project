@@ -25,6 +25,11 @@ function deleteReviewFromServer() {
     });
 }
 
+
+function postItemsToServer() {
+
+}
+
 function filterSearchedElements() {
     if (state.searchByLocation !== '') {
         let elemetsToDisplay = state.companies
