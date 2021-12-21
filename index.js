@@ -19,6 +19,15 @@ function fetchDataFromServer() {
 }
 
 
+function filterSearchedElements() {
+    if (state.searchByLocation !== '') {
+        let elemetsToDisplay = state.companies
+        elemetsToDisplay = elemetsToDisplay.filter(items => {
+            return items.company_name.toLowerCase().includes(state.searchByLocation.toLocaleLowerCase())
+        })
+    }
+}
+
 function companiesToDisplay() {
     let companiesToDisplay = state.companies
 
@@ -50,6 +59,8 @@ function renderHeader() {
     findJobsAEl.addEventListener('click', function () {
         state.selectedPage = 'Find Jobs'
         state.selectedItem = null
+        state.searchByLocation = ''
+        state.searchByType = ''
         render()
     })
     findJobsLi.append(findJobsAEl)
@@ -281,6 +292,9 @@ function prodductPage() {
 
 }
 
+
+
+
 function renderMain() {
 
     const mainEl = document.createElement('main')
@@ -295,14 +309,23 @@ function renderMain() {
 
         const searchform = document.createElement('form')
         searchform.setAttribute('class', 'search-section__')
+        searchform.addEventListener('submit', function (event) {
+            event.preventDefault()
+
+            state.searchByLocation = searchform.search.value
+            // state.searchByType = searchform.search.value
+            render()
+        })
 
         const inputJobEl = document.createElement('input')
         inputJobEl.setAttribute('class', 'search-box-title')
         inputJobEl.setAttribute('type', 'search')
+        inputJobEl.setAttribute('name', 'search')
         inputJobEl.setAttribute('placeholder', 'job title, keywords')
 
         const inputCityEl = document.createElement('input')
         inputCityEl.setAttribute('class', 'search-box-city')
+        inputJobEl.setAttribute('name', 'search')
         inputCityEl.setAttribute('type', 'search')
         inputCityEl.setAttribute('placeholder', 'city, state')
 
