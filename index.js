@@ -51,19 +51,15 @@ function updateReviewsOnServer(content) {
 
 function filterSearchedElements() {
     // document.body.innerHTML = ''
-
-    // if (state.searchByLocation !== '') 
     let elemetsToDisplay = state.companies
-    elemetsToDisplay = elemetsToDisplay.filter(items => {
-        return items.company_name.toLowerCase().includes(state.searchByLocation.toLocaleLowerCase()
-        )
+    if (state.searchByLocation !== '') {
 
-    })
-
-    // for (const item of elemetsToDisplay) {
-    //     renderMain(items)
-
-    // }
+        elemetsToDisplay = elemetsToDisplay.filter(items => {
+            return items.company_name.toLowerCase().includes(state.searchByLocation.toLocaleLowerCase()
+            )
+        })
+    }
+    return filterSearchedElements()
 }
 
 
@@ -410,14 +406,14 @@ function renderMain() {
 
         for (const item of companiesToDisplay()) {
             renderTopJobsSection(item, recentSearches)
-            filterSearchedElements()
+            // filterSearchedElements()
 
 
         }
 
         for (const item of state.companies) {
             sugestedCategorie(item, suggestedSearches)
-            filterSearchedElements()
+            // filterSearchedElements()
 
         }
 
