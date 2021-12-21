@@ -1,6 +1,7 @@
 {
     "data": [
         {
+            "id": 1,
             "slug": "Auditues i brendshem i sitemeve financare",
             "company_name": "Delta Group",
             "title": "Audit Finace",
@@ -15,6 +16,7 @@
             "reviews": "hello"
         },
         {
+            "id": 2,
             "slug": "Perfaqesues shitje dyqan Vodafone",
             "company_name": "Vodafone",
             "title": "Perfaqesues Shitjes",
@@ -29,6 +31,7 @@
             "reviews": "hello"
         },
         {
+            "id": 3,
             "slug": "Konsulent Imobiliar ne Vollga",
             "company_name": "Future Home",
             "title": "Konsulent Imobiliar",
@@ -43,6 +46,7 @@
             "reviews": "hello"
         },
         {
+            "id": 4,
             "slug": "Financiere ne sektorin e shitjeve",
             "company_name": "Go Tech Shpk",
             "title": "Financiere",
@@ -57,6 +61,7 @@
             "reviews": "hello"
         },
         {
+            "id": 5,
             "slug": "Front Desk",
             "company_name": "Hotel Adriatik",
             "title": "Reception",
@@ -71,6 +76,7 @@
             "reviews": "hello"
         },
         {
+            "id": 6,
             "slug": "Security Guard ne Hotel",
             "company_name": "Hotel Adriatik",
             "title": "Security Guard",
@@ -85,6 +91,7 @@
             "reviews": "hello"
         },
         {
+            "id": 7,
             "slug": "Menaxher ne departamentin e shitjes",
             "company_name": "Pespa Albania",
             "title": "Manager",
@@ -99,6 +106,7 @@
             "reviews": "I am interesting"
         },
         {
+            "id": 8,
             "slug": "Vend pune Grafik Design",
             "company_name": "Pespa Albania",
             "title": "Grafik Design",
@@ -113,6 +121,7 @@
             "reviews": "I am interesting"
         },
         {
+            "id": 9,
             "slug": "Kuzhiner tek 4 Stinet",
             "company_name": "Restorant 4 Stinet",
             "title": "Kuzhinier",
@@ -127,6 +136,7 @@
             "reviews": "I am interesting"
         },
         {
+            "id": 10,
             "slug": "Kamarier tek 4 Stinet",
             "company_name": "Restorant 4 Stinet",
             "title": "Kamarier",

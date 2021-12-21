@@ -366,11 +366,15 @@ function renderMain() {
 
         for (const item of companiesToDisplay()) {
             renderTopJobsSection(item, recentSearches)
+            filterSearchedElements()
+
 
         }
 
         for (const item of state.companies) {
             sugestedCategorie(item, suggestedSearches)
+            filterSearchedElements()
+
         }
 
         mainEl.append(searchSection, recentSearches, suggestedSearches)
