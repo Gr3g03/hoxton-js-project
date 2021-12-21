@@ -177,6 +177,7 @@ main{
   .recent-searches__ {
     display: grid;
     grid-template-columns: 80px 1fr auto;
+    border: 1px solid black;
    
   }
   

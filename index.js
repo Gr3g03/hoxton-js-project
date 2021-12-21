@@ -68,6 +68,7 @@ function renderHeader() {
     reviewsAEl.addEventListener('click', function () {
         state.selectedPage = 'Company Reviews'
         state.selectedItem = null
+
         render()
     })
     reviewsLi.append(reviewsAEl)
@@ -132,13 +133,14 @@ function renderTopJobsSection(item, recentSearches) {
     const recentSearchesContainer = document.createElement('div')
     recentSearchesContainer.setAttribute('class', 'recent-searches__')
 
-
-    const divinfoEL = document.createElement('div')
-    divinfoEL.setAttribute('class', 'company-info ')
     recentSearchesContainer.addEventListener('click', function () {
         state.selectedItem = item
         render()
     })
+
+    const divinfoEL = document.createElement('div')
+    divinfoEL.setAttribute('class', 'company-info ')
+
 
     const divLogoEL = document.createElement('div')
     divLogoEL.setAttribute('class', 'logo')
@@ -186,8 +188,14 @@ function renderTopJobsSection(item, recentSearches) {
 }
 
 function sugestedCategorie(item, suggestedSearches) {
+
     const suggesteddivEL = document.createElement('div')
     suggesteddivEL.setAttribute('class', 'suggested')
+    // suggesteddivEL.addEventListener('click', function () {
+    //     state.selectedItem = item
+    //     console.log('hello')
+    //     render()
+    // })
 
     const svgEL = document.createElement('img')
     svgEL.setAttribute('class', 'sugested-svg')
@@ -199,7 +207,9 @@ function sugestedCategorie(item, suggestedSearches) {
 
 
     suggestedSearches.append(suggesteddivEL)
+
     suggesteddivEL.append(svgEL, industryName)
+
 
 }
 
@@ -251,85 +261,98 @@ function companyReviews(mainEl) {
 
 }
 
+function prodductPage() {
+
+}
+
 function renderMain() {
 
     const mainEl = document.createElement('main')
 
-    const searchSection = document.createElement('section')
-    searchSection.setAttribute('class', 'search-section')
-
-    const searchform = document.createElement('form')
-    searchform.setAttribute('class', 'search-section__')
-
-    const inputJobEl = document.createElement('input')
-    inputJobEl.setAttribute('class', 'search-box')
-    inputJobEl.setAttribute('type', 'search')
-    inputJobEl.setAttribute('placeholder', 'job title, keywords')
-
-    const inputCityEl = document.createElement('input')
-    inputCityEl.setAttribute('class', 'search-box')
-    inputCityEl.setAttribute('type', 'search')
-    inputCityEl.setAttribute('placeholder', 'city, state')
-
-    const searchButton = document.createElement('button')
-    searchButton.setAttribute('class', 'search-button')
-    searchButton.textContent = 'Find Jobs'
-
-    searchform.append(inputJobEl, inputCityEl, searchButton)
-
-    const postFindEl = document.createElement('span')
-    postFindEl.setAttribute('class', 'post-find')
-    // searchSection.append(postFindEl)
-
-    const h3PostEl = document.createElement('h3')
-    const aPostEl = document.createElement('a')
-    aPostEl.setAttribute('href', '#')
-    aPostEl.textContent = "Post your job"
-
-    h3PostEl.append(aPostEl)
-
-    const h3FindEl = document.createElement('h3')
-    const aFindEl = document.createElement('a')
-    aFindEl.setAttribute('href', '#')
-    aFindEl.textContent = "Find employees"
-
-    h3FindEl.append(aFindEl)
-    searchSection.append(searchform, postFindEl)
-
-    postFindEl.append(h3PostEl, h3FindEl)
-
-    const recentSearches = document.createElement('section')
-    recentSearches.setAttribute('class', 'recent-searches')
-
-
-    const suggestedSearches = document.createElement('section')
-    suggestedSearches.setAttribute('class', 'suggested-searches')
-
-
-
-    // if (state.companies === 'Find Jobs') {
-    // -- Top Job Section --
-
-    if (state.companies !== null) {
-        companyReviews(mainEl)
+    // -- product details --
+    if (state.selectedItem !== null) {
+        const testh1 = document.createElement('h1')
+        testh1.textContent = 'hello'
+        mainEl.append(testh1)
     }
+    else {
+        const searchSection = document.createElement('section')
+        searchSection.setAttribute('class', 'search-section')
 
-    for (const item of companiesToDisplay()) {
-        renderTopJobsSection(item, recentSearches)
+        const searchform = document.createElement('form')
+        searchform.setAttribute('class', 'search-section__')
 
+        const inputJobEl = document.createElement('input')
+        inputJobEl.setAttribute('class', 'search-box')
+        inputJobEl.setAttribute('type', 'search')
+        inputJobEl.setAttribute('placeholder', 'job title, keywords')
+
+        const inputCityEl = document.createElement('input')
+        inputCityEl.setAttribute('class', 'search-box')
+        inputCityEl.setAttribute('type', 'search')
+        inputCityEl.setAttribute('placeholder', 'city, state')
+
+        const searchButton = document.createElement('button')
+        searchButton.setAttribute('class', 'search-button')
+        searchButton.textContent = 'Find Jobs'
+
+        searchform.append(inputJobEl, inputCityEl, searchButton)
+
+        const postFindEl = document.createElement('span')
+        postFindEl.setAttribute('class', 'post-find')
+        // searchSection.append(postFindEl)
+
+        const h3PostEl = document.createElement('h3')
+        const aPostEl = document.createElement('a')
+        aPostEl.setAttribute('href', '#')
+        aPostEl.textContent = "Post your job"
+
+        h3PostEl.append(aPostEl)
+
+        const h3FindEl = document.createElement('h3')
+        const aFindEl = document.createElement('a')
+        aFindEl.setAttribute('href', '#')
+        aFindEl.textContent = "Find employees"
+
+        h3FindEl.append(aFindEl)
+        searchSection.append(searchform, postFindEl)
+
+        postFindEl.append(h3PostEl, h3FindEl)
+
+        const recentSearches = document.createElement('section')
+        recentSearches.setAttribute('class', 'recent-searches')
+
+
+        const suggestedSearches = document.createElement('section')
+        suggestedSearches.setAttribute('class', 'suggested-searches')
+
+
+
+        // if (state.companies === 'Find Jobs') {
+        // -- Top Job Section --
+        // if (state.companies !== null) {
+        //     companyReviews(mainEl)
+        // }
+
+        // else {
+        //if (state.companies === 'Find Jobs')
+        for (const item of companiesToDisplay()) {
+            renderTopJobsSection(item, recentSearches)
+
+        }
+        // }
+        //  -- Sugessted Categories --
+        // if (state.companies === 'Find Company') {
+        for (const item of state.companies) {
+            sugestedCategorie(item, suggestedSearches)
+        }
+        // }
+        // }
+
+
+
+        mainEl.append(searchSection, recentSearches, suggestedSearches)
     }
-    // }
-    //  -- Sugessted Categories --
-    // else {
-    for (const item of state.companies) {
-        sugestedCategorie(item, suggestedSearches)
-    }
-    // }
-    // }
-
-
-
-    mainEl.append(searchSection, recentSearches, suggestedSearches)
     document.body.append(mainEl)
 
 }
