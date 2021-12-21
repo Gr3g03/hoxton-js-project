@@ -19,6 +19,12 @@ function fetchDataFromServer() {
 }
 
 
+function deleteReviewFromServer() {
+    return fetch(`http://localhost:3000/reviews/${id}`, {
+        method: "DELETE"
+    });
+}
+
 function filterSearchedElements() {
     if (state.searchByLocation !== '') {
         let elemetsToDisplay = state.companies
@@ -229,15 +235,12 @@ function companyReviews(mainEl) {
     const companyWraper = document.createElement('section')
     companyWraper.setAttribute('class', 'company-wraper')
 
-    // const companySection = document.createElement('section')
-    // companySection.setAttribute('class', 'company-section')
-
     const contentDiv = document.createElement('div')
     contentDiv.setAttribute('class', 'company-content')
 
     const imageEL = document.createElement('img')
     imageEL.setAttribute('class', 'product__img')
-    imageEL.setAttribute('src', '#')
+    imageEL.setAttribute('src', `./assets/accounting.svg`)
     imageEL.setAttribute('alt', '#')
 
 
@@ -270,49 +273,25 @@ function companyReviews(mainEl) {
 
     const h3TitleReview = document.createElement('h3')
     h3TitleReview.setAttribute('class', 'company-title-review')
-    h3TitleReview.textContent = 'Sample Headline'
+    h3TitleReview.textContent = 'Leave a review'
+
+    const userInputReview = document.createElement('input')
+
 
     const pReview = document.createElement('p')
     pReview.setAttribute('class', 'text-review')
-    pReview.textContent = "sample text"
+    pReview.textContent = state.selectedItem.content
 
     const reviewBtn = document.createElement('button')
     reviewBtn.setAttribute('class', 'review-btn')
     reviewBtn.textContent = 'x'
 
-    reviewDiv.append(h3TitleReview, pReview, reviewBtn)
+    pReview.append(reviewBtn)
+    reviewDiv.append(h3TitleReview, pReview)
 
     companyWraper.append(wraperReviewsDiv)
 
-    // const companyContentDiv = document.createElement('div')
-    // companyContentDiv.setAttribute('class', 'company-content__')
-    // contentDiv.append(companyContentDiv)
 
-
-
-    // const aboutEl = document.createElement('div')
-    // aboutEl.setAttribute('class', 'about-company')
-    // companyContentDiv.append(avatarEl, aboutEl)
-
-    // const aAboutEl = document.createElement('a')
-    // aAboutEl.setAttribute('href', '#')
-    // const spaneEl = document.createElement('span')
-    // aAboutEl.append(spaneEl)
-    // const boldEl = document.createElement('b')
-    // spaneEl.append(boldEl)
-
-    // const nameAEl = document.createElement('a')
-    // nameAEl.setAttribute('href', '#')
-    // const pNameEl = document.createElement('p')
-    // pNameEl.textContent = state.selectedItem.company_name
-    // nameAEl.append(pNameEl)
-
-    // const pInfoEl = document.createElement('p')
-    // pInfoEl.textContent = 'Visit Website'
-
-    // aboutEl.append(aAboutEl, nameAEl, pInfoEl)
-    // companySection.append(contentDiv, aboutEl)
-    // companyWraper.append(companySection)
     mainEl.append(companyWraper)
 }
 
