@@ -215,51 +215,66 @@ function sugestedCategorie(item, suggestedSearches) {
 }
 
 function companyReviews(mainEl) {
+    const companyWraper = document.createElement('section')
+    companyWraper.setAttribute('class', 'company-wraper')
 
-    const companySection = document.createElement('section')
-    companySection.setAttribute('class', 'company-section')
+    // const companySection = document.createElement('section')
+    // companySection.setAttribute('class', 'company-section')
 
     const contentDiv = document.createElement('div')
     contentDiv.setAttribute('class', 'company-content')
-    companySection.append(contentDiv)
-
-    const companyContentDiv = document.createElement('div')
-    companyContentDiv.setAttribute('class', 'company-content__')
-    contentDiv.append(companyContentDiv)
-
-    const avatarEl = document.createElement('div')
-    avatarEl.setAttribute('class', 'avatar-logo')
 
     const imageEL = document.createElement('img')
+    imageEL.setAttribute('class', 'product__img')
     imageEL.setAttribute('src', '#')
     imageEL.setAttribute('alt', '#')
-    avatarEl.append(imageEL)
 
 
-    const aboutEl = document.createElement('div')
-    aboutEl.setAttribute('class', 'about-company')
-    companyContentDiv.append(avatarEl, aboutEl)
+    const companyName = document.createElement('h2')
+    companyName.setAttribute('class', 'product-name')
+    companyName.textContent = state.selectedItem.company_name
 
-    const aAboutEl = document.createElement('a')
-    aAboutEl.setAttribute('href', '#')
-    const spaneEl = document.createElement('span')
-    aAboutEl.append(spaneEl)
-    const boldEl = document.createElement('b')
-    spaneEl.append(boldEl)
+    const jobPositoin = document.createElement('h4')
+    jobPositoin.setAttribute('class', 'job-possition')
+    jobPositoin.textContent = state.selectedItem.slug
 
-    const nameAEl = document.createElement('a')
-    nameAEl.setAttribute('href', '#')
-    const pNameEl = document.createElement('p')
-    pNameEl.textContent = 'Company name'
-    nameAEl.append(pNameEl)
+    const jobDescription = document.createElement('p')
+    jobDescription.setAttribute('class', 'job-description')
+    jobDescription.textContent = state.selectedItem.description
+    contentDiv.append(imageEL, companyName, jobPositoin, jobDescription)
 
-    const pInfoEl = document.createElement('p')
-    pInfoEl.textContent = 'Company Info'
 
-    aboutEl.append(aAboutEl, nameAEl, pInfoEl)
-    companySection.append(contentDiv, aboutEl)
-    mainEl.append(companySection)
+    companyWraper.append(contentDiv)
+    // const companyContentDiv = document.createElement('div')
+    // companyContentDiv.setAttribute('class', 'company-content__')
+    // contentDiv.append(companyContentDiv)
 
+
+
+    // const aboutEl = document.createElement('div')
+    // aboutEl.setAttribute('class', 'about-company')
+    // companyContentDiv.append(avatarEl, aboutEl)
+
+    // const aAboutEl = document.createElement('a')
+    // aAboutEl.setAttribute('href', '#')
+    // const spaneEl = document.createElement('span')
+    // aAboutEl.append(spaneEl)
+    // const boldEl = document.createElement('b')
+    // spaneEl.append(boldEl)
+
+    // const nameAEl = document.createElement('a')
+    // nameAEl.setAttribute('href', '#')
+    // const pNameEl = document.createElement('p')
+    // pNameEl.textContent = state.selectedItem.company_name
+    // nameAEl.append(pNameEl)
+
+    // const pInfoEl = document.createElement('p')
+    // pInfoEl.textContent = 'Visit Website'
+
+    // aboutEl.append(aAboutEl, nameAEl, pInfoEl)
+    // companySection.append(contentDiv, aboutEl)
+    // companyWraper.append(companySection)
+    mainEl.append(companyWraper)
 }
 
 function prodductPage() {
@@ -272,9 +287,7 @@ function renderMain() {
 
     // -- product details --
     if (state.selectedItem !== null) {
-        const testh1 = document.createElement('h1')
-        testh1.textContent = 'hello'
-        mainEl.append(testh1)
+        companyReviews(mainEl)
     }
     else {
         const searchSection = document.createElement('section')
@@ -328,29 +341,14 @@ function renderMain() {
         suggestedSearches.setAttribute('class', 'suggested-searches')
 
 
-
-        // if (state.companies === 'Find Jobs') {
-        // -- Top Job Section --
-        // if (state.companies !== null) {
-        //     companyReviews(mainEl)
-        // }
-
-        // else {
-        //if (state.companies === 'Find Jobs')
         for (const item of companiesToDisplay()) {
             renderTopJobsSection(item, recentSearches)
 
         }
-        // }
-        //  -- Sugessted Categories --
-        // if (state.companies === 'Find Company') {
+
         for (const item of state.companies) {
             sugestedCategorie(item, suggestedSearches)
         }
-        // }
-        // }
-
-
 
         mainEl.append(searchSection, recentSearches, suggestedSearches)
     }

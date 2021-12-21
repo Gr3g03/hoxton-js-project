@@ -247,12 +247,20 @@ main{
     width: 100px;
   }
 
-
-
-  .company-content{
+  .company-wraper{
     display: grid;
-    border: 0.3px solid blue;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+
+.company-content{
+    display: grid;
     background-color: whitesmoke;
+    /* border: 0.3px solid blue; */
+    /* grid-template-columns: 50px 1fr; */
 }
 
 .about-company a{
@@ -262,17 +270,16 @@ main{
 
 .company-section{
     display: grid;
-    border: 0.3px solid blue;
-    grid-template-columns: 50px 1fr;
-
+    color: black;
 }
 
 
 .company-content__{
     display: grid;
-    border: 0.3px solid blue;
+    /* border: 0.3px solid blue; */
 
 }
+
 
 
 
