@@ -281,15 +281,15 @@ function renderMain() {
         searchSection.setAttribute('class', 'search-section')
 
 <<<<<<< HEAD
-    const inputJobEl = document.createElement('input')
-    inputJobEl.setAttribute('class', 'search-box-title')
-    inputJobEl.setAttribute('type', 'search')
-    inputJobEl.setAttribute('placeholder', 'job title, keywords')
+        const inputJobEl = document.createElement('input')
+        inputJobEl.setAttribute('class', 'search-box-title')
+        inputJobEl.setAttribute('type', 'search')
+        inputJobEl.setAttribute('placeholder', 'job title, keywords')
 
-    const inputCityEl = document.createElement('input')
-    inputCityEl.setAttribute('class', 'search-box-city')
-    inputCityEl.setAttribute('type', 'search')
-    inputCityEl.setAttribute('placeholder', 'city, state')
+        const inputCityEl = document.createElement('input')
+        inputCityEl.setAttribute('class', 'search-box-city')
+        inputCityEl.setAttribute('type', 'search')
+        inputCityEl.setAttribute('placeholder', 'city, state')
 =======
         const searchform = document.createElement('form')
         searchform.setAttribute('class', 'search-section__')
