@@ -12,7 +12,8 @@
             "job_types": "Full Time",
             "location": "Tirane",
             "created_at": "20.12.2021",
-            "salary": 330
+            "salary": 330,
+            "reviews": "hello"
         },
         {
             "id": 2,
@@ -148,16 +149,6 @@
             "created_at": 1638006722,
             "salary": 330,
             "reviews": "I am interesting"
-        }
-    ],
-    "reviews": [
-        {
-            "id": 2,
-            "content": "test"
-        },
-        {
-            "id": 1,
-            "content": "test"
         }
     ]
 }

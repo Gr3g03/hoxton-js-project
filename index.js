@@ -280,13 +280,14 @@ function companyReviews(mainEl) {
 
     const pReview = document.createElement('p')
     pReview.setAttribute('class', 'text-review')
-    pReview.textContent = state.selectedItem.content
+    pReview.textContent = state.selectedItem.reviews
 
     const reviewBtn = document.createElement('button')
     reviewBtn.setAttribute('class', 'review-btn')
     reviewBtn.textContent = 'x'
-
     pReview.append(reviewBtn)
+
+
     reviewDiv.append(h3TitleReview, pReview)
 
     companyWraper.append(wraperReviewsDiv)
