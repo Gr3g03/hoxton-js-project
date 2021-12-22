@@ -175,39 +175,39 @@
   ],
   "users": [
     {
-      "name": "Grigor",
-      "lastname": "Godole",
+      "firstName": "Grigor",
+      "lastName": "Godole",
       "birthday": "",
       "gender": "",
       "role": "",
-      "email": "grigor@hireme.com",
+      "id": "grigor@hireme.com",
       "password": 123456
     },
     {
-      "name": "Denis",
-      "lastname": "Mimini",
+      "firstName": "Denis",
+      "lastName": "Mimini",
       "birthday": "",
       "gender": "",
       "role": "",
-      "email": "denis@hireme.com",
+      "id": "denis@hireme.com",
       "password": 123456
     },
     {
-      "name": "Nico",
-      "lastname": "Marcora",
+      "firstName": "Nico",
+      "lastName": "Marcora",
       "birthday": "",
       "gender": "",
       "role": "",
-      "email": "nico@hireme.com",
+      "id": "nico@hireme.com",
       "password": 123456
     },
     {
-      "name": "Ed",
-      "lastname": "Putans",
+      "firtName": "Ed",
+      "lastName": "Putans",
       "birthday": "",
       "gender": "",
       "role": "",
-      "email": "ed@hireme.com",
+      "id": "ed@hireme.com",
       "password": 123456
     }
   ]
