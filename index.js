@@ -1,7 +1,7 @@
 
 const state = {
-    companies: '',
-    reviews: '',
+    companies: [],
+    reviews: [],
     user: null,
     pages: ['find jobs', 'find saleries', 'company reviews', 'upload resume', 'sign in'],
     selectedPage: '',
@@ -70,24 +70,25 @@ function createJobOnServer(company_name, title, description) {
     }).then(resp => resp.json())
 }
 
-function filterSearchedElements() {
-    document.body.innerHTML = ''
-    let elemetsToDisplay = state.companies
+function filterSearchedElements(companies) {
+    // document.body.innerHTML = ''
+    let elementsToDisplay = companies
     if (state.searchByLocation !== '') {
-        elemetsToDisplay = elemetsToDisplay.filter(items => {
+        elementsToDisplay = elementsToDisplay.filter(items => {
             return items.company_name.toLowerCase().includes(state.searchByLocation.toLocaleLowerCase()
             )
         })
     }
-    for (item of elemetsToDisplay) {
-        renderMain(item)
-    }
+    // for (item of elemetsToDisplay) {
+    //     renderMain(item)
+    // }
     // return filterSearchedElements()
+    return elementsToDisplay
 }
 
 
 function companiesToDisplay() {
-    let companiesToDisplay = state.companies
+    let companiesToDisplay = filterSearchedElements(state.companies)
 
     return companiesToDisplay = companiesToDisplay.slice(0, 6)
 }
@@ -426,7 +427,16 @@ function companyReviews(mainEl) {
 
     // inputImgEl,
     reviewsForm.append(companyNameEl, titleNameEl, descriptionEl, submitBtn)
+
+    const displayAllJobs = document.createElement('section')
+    displayAllJobs.setAttribute('class', 'all-jobs-section')
+
+
+
     mainEl.append(companyWraper, formSection)
+
+
+
 
 
 }
@@ -455,20 +465,20 @@ function renderMain() {
         searchform.addEventListener('submit', function (event) {
             event.preventDefault()
 
-            state.searchByLocation = searchform.search.value
-            // state.searchByType = searchform.search.value
+            state.searchByLocation = searchform.searchByLocation.value
+            state.searchByType = searchform.searchByType.value
             render()
         })
 
         const inputJobEl = document.createElement('input')
         inputJobEl.setAttribute('class', 'search-box-title')
         inputJobEl.setAttribute('type', 'search')
-        inputJobEl.setAttribute('name', 'search')
+        inputJobEl.setAttribute('name', 'searchByType')
         inputJobEl.setAttribute('placeholder', 'job title, keywords')
 
         const inputCityEl = document.createElement('input')
         inputCityEl.setAttribute('class', 'search-box-city')
-        inputJobEl.setAttribute('name', 'search')
+        inputJobEl.setAttribute('name', 'searchByLocation')
         inputCityEl.setAttribute('type', 'search')
         inputCityEl.setAttribute('placeholder', 'city, state')
 
