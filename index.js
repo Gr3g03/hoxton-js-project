@@ -313,7 +313,28 @@ function companyReviews(mainEl) {
     h3TitleReview.setAttribute('class', 'company-title-review')
     h3TitleReview.textContent = 'Leave a review'
 
+    const addReviewForm = document.createElement('form')
+    addReviewForm.setAttribute('class', 'comment-form')
+
     const userInputReview = document.createElement('input')
+    userInputReview.setAttribute('type', 'text')
+    userInputReview.setAttribute('class', 'comment-input')
+    userInputReview.setAttribute('placeholder', 'Enter your comment...')
+    userInputReview.setAttribute('name', 'comment')
+
+    addReviewForm.append(userInputReview)
+
+    addReviewForm.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        createReviewsOnServer(state.id, addReviewForm.comment.value).then(
+            function (newReviewFromServer) {
+                state.reviews.push(newReviewFromServer)
+
+                render()
+            }
+        )
+    })
 
     const previewBox = document.createElement('div')
 
@@ -336,7 +357,7 @@ function companyReviews(mainEl) {
 
 
 
-    reviewDiv.append(h3TitleReview, previewBox)
+    reviewDiv.append(h3TitleReview, previewBox, addReviewForm)
 
     companyWraper.append(wraperReviewsDiv)
 
