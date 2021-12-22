@@ -269,7 +269,7 @@ function sugestedCategorie(item, suggestedSearches) {
 
 }
 
-function companyReviews(mainEl, item) {
+function companyReviews(mainEl) {
     const companyWraper = document.createElement('section')
     companyWraper.setAttribute('class', 'company-wraper')
 
@@ -327,7 +327,8 @@ function companyReviews(mainEl, item) {
         reviewBtn.setAttribute('class', 'review-btn')
         reviewBtn.textContent = 'x'
         reviewBtn.addEventListener('click', function () {
-            deleteReviewFromServer.comment.id
+            deleteReviewFromServer(comment.id)
+            // render()
         })
         pReview.append(reviewBtn)
         previewBox.append(pReview)
