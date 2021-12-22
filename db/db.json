@@ -172,5 +172,43 @@
       "content": "Ku ndodheni?",
       "dataId": 7
     }
+  ],
+  "users": [
+    {
+      "name": "Grigor",
+      "lastname": "Godole",
+      "birthday": "",
+      "gender": "",
+      "role": "",
+      "email": "grigor@hireme.com",
+      "password": 123456
+    },
+    {
+      "name": "Denis",
+      "lastname": "Mimini",
+      "birthday": "",
+      "gender": "",
+      "role": "",
+      "email": "denis@hireme.com",
+      "password": 123456
+    },
+    {
+      "name": "Nico",
+      "lastname": "Marcora",
+      "birthday": "",
+      "gender": "",
+      "role": "",
+      "email": "nico@hireme.com",
+      "password": 123456
+    },
+    {
+      "name": "Ed",
+      "lastname": "Putans",
+      "birthday": "",
+      "gender": "",
+      "role": "",
+      "email": "ed@hireme.com",
+      "password": 123456
+    }
   ]
 }
