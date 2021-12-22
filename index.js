@@ -433,8 +433,28 @@ function companyReviews(mainEl) {
 
 
 
-    mainEl.append(companyWraper, formSection)
 
+
+    // Footer Reviews
+
+    const footerReviews = document.createElement('section')
+    footerReviews.setAttribute('class', 'footer-reviews-section')
+
+    const titleJob = document.createElement('h4')
+    titleJob.setAttribute('class', 'title-job-footer-reviews')
+    titleJob.textContent = 'Job title'
+
+    const companyNameFooter = document.createElement('h5')
+    companyNameFooter.setAttribute('class', 'company-name-footer-reviews')
+    companyNameFooter.textContent = 'Company name'
+
+    const pDescription = document.createElement('p')
+    pDescription.setAttribute('class', 'description-footer-reviews')
+    pDescription.textContent = 'description'
+
+    footerReviews.append(titleJob, companyNameFooter, pDescription)
+
+    mainEl.append(companyWraper, formSection, footerReviews)
 
 
 
