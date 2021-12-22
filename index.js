@@ -561,7 +561,16 @@ function signInModal() {
     signInForm.addEventListener('submit', function (event) {
         event.preventDefault()
 
+        // sign the user in
+        signIn(emailInput.value, passwordInput.value)
+
+        // close the modal
+        state.modal = ''
+
+        // render
+        render()
     })
+
 
     const emailLabel = document.createElement('label')
     emailLabel.setAttribute('name', 'emailinput')
@@ -607,6 +616,29 @@ function signInModal() {
     document.body.append(searchBtnWrapper)
 }
 
+function signIn(email, password) {
+    return fetch(`http://localhost:3000/users/${email}`)
+        .then(function (resp) {
+            return resp.json()
+        })
+        .then(function (user) {
+            if (user.password === password) {
+                // we know the user signed in successfully
+                alert('Welcome')
+                state.user = user
+                render()
+            } else {
+                // we know the user failed to sign in
+                alert('Wrong email/password. Please try again.')
+            }
+        })
+}
+
+function renderModal() {
+    if (state.modal === '') return
+
+    if (state.modal === 'user') signInModal()
+}
 
 function UploadModal() {
     const searchBtnWrapper = document.createElement('div')
@@ -761,6 +793,7 @@ function render() {
 
     renderHeader()
     renderMain()
+    renderModal()
     renderFooter()
 }
 
