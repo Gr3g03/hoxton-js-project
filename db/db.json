@@ -139,24 +139,6 @@
       "location": "Durres",
       "created_at": 1638006722,
       "salary": 330
-    },
-    {
-      "company_name": "test",
-      "title": "test",
-      "description": "test",
-      "id": 11
-    },
-    {
-      "company_name": "dsa",
-      "title": "dsa",
-      "description": "das",
-      "id": 12
-    },
-    {
-      "company_name": "test",
-      "title": "test",
-      "description": "test",
-      "id": 13
     }
   ],
   "reviews": [
@@ -174,11 +156,6 @@
       "id": 4,
       "content": "Si jane oraret?",
       "dataId": 4
-    },
-    {
-      "id": 5,
-      "content": "Kur mund te paraqitem per interviste?",
-      "dataId": 5
     }
   ],
   "users": [

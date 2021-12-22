@@ -45,7 +45,6 @@ function createReviewsOnServer(id, content) {
     }).then(resp => resp.json())
 }
 
-
 function updateReviewsOnServer(content) {
     return fetch(`http://localhost:3000/reviews/${reviews.id}`, {
         method: 'PATCH',
@@ -85,7 +84,6 @@ function filterSearchedElements(companies) {
     // return filterSearchedElements()
     return elementsToDisplay
 }
-
 
 function companiesToDisplay() {
     let companiesToDisplay = filterSearchedElements(state.companies)
@@ -197,7 +195,6 @@ function renderHeader() {
     rightNavUl.append(uploadLi, signInLi)
 
 }
-
 
 function renderTopJobsSection(item, recentSearches) {
 
@@ -428,31 +425,32 @@ function companyReviews(mainEl) {
     // inputImgEl,
     reviewsForm.append(companyNameEl, titleNameEl, descriptionEl, submitBtn)
 
-    const displayAllJobs = document.createElement('section')
-    displayAllJobs.setAttribute('class', 'all-jobs-section')
-
-
-
-
-
     // Footer Reviews
 
     const footerReviews = document.createElement('section')
     footerReviews.setAttribute('class', 'footer-reviews-section')
+    const displayJobs = document.createElement('div')
+    displayJobs.setAttribute('class', 'job-section')
+    for (const job of state.companies) {
 
-    const titleJob = document.createElement('h4')
-    titleJob.setAttribute('class', 'title-job-footer-reviews')
-    titleJob.textContent = 'Job title'
+        const divel = document.createElement('div')
+        divel.setAttribute('class', 'div-container')
 
-    const companyNameFooter = document.createElement('h5')
-    companyNameFooter.setAttribute('class', 'company-name-footer-reviews')
-    companyNameFooter.textContent = 'Company name'
+        const titleJob = document.createElement('h4')
+        titleJob.setAttribute('class', 'title-job-footer-reviews')
+        titleJob.textContent = job.title
 
-    const pDescription = document.createElement('p')
-    pDescription.setAttribute('class', 'description-footer-reviews')
-    pDescription.textContent = 'description'
+        const companyNameFooter = document.createElement('h5')
+        companyNameFooter.setAttribute('class', 'company-name-footer-reviews')
+        companyNameFooter.textContent = job.company_name
 
-    footerReviews.append(titleJob, companyNameFooter, pDescription)
+        const pDescription = document.createElement('p')
+        pDescription.setAttribute('class', 'description-footer-reviews')
+        pDescription.textContent = job.description
+        divel.append(titleJob, companyNameFooter, pDescription)
+        displayJobs.append(divel)
+    }
+    footerReviews.append(displayJobs)
 
     mainEl.append(companyWraper, formSection, footerReviews)
 
@@ -460,13 +458,6 @@ function companyReviews(mainEl) {
 
 
 }
-
-// function prodductPage() {
-
-// }
-
-
-
 
 function renderMain() {
 
@@ -486,7 +477,7 @@ function renderMain() {
             event.preventDefault()
 
             state.searchByLocation = searchform.searchByLocation.value
-            state.searchByType = searchform.searchByType.value
+            // state.searchByType = searchform.searchByType.value
             render()
         })
 
@@ -556,8 +547,6 @@ function renderMain() {
 
 }
 
-
-
 function renderFooter() {
     const footerEl = document.createElement('footer')
     document.body.append(footerEl)
@@ -621,9 +610,6 @@ function renderFooter() {
 
 
 }
-
-
-
 
 function signInModal() {
     const searchBtnWrapper = document.createElement('div')
@@ -696,10 +682,6 @@ function signInModal() {
 }
 
 function signIn(id, password) {
-    // return fetch(`http://localhost:3000/users/`)
-    //     .then(function (resp) {
-    //         return resp.json()
-    //     })
     return fetch(`http://localhost:3000/users/${id}`)
         .then(function (resp) {
             return resp.json()
@@ -881,7 +863,6 @@ function render() {
 
 function init() {
 
-    // fetchDataFromServer().then(companiesData => state.companies = companiesData)
     fetchDataFromServer().then(function (companiesData) {
         state.companies = companiesData
         render()
@@ -891,8 +872,5 @@ function init() {
         render()
     })
 
-    // signIn().then(function (users) {
-    //     state.user = users
-    // })
 }
 init()
