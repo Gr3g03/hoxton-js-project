@@ -318,20 +318,23 @@ function companyReviews(mainEl, item) {
     const previewBox = document.createElement('div')
 
 
-    const pReview = document.createElement('p')
-    pReview.setAttribute('class', 'text-review')
-    pReview.textContent = state.reviews
+    for (const comment of state.reviews) {
+        const pReview = document.createElement('p')
+        pReview.setAttribute('class', 'text-review')
+        pReview.textContent = comment.content
 
-    const reviewBtn = document.createElement('button')
-    reviewBtn.setAttribute('class', 'review-btn')
-    reviewBtn.textContent = 'x'
-    reviewBtn.addEventListener('click', function () {
-        deleteReviewFromServer.reviews.id
-    })
+        const reviewBtn = document.createElement('button')
+        reviewBtn.setAttribute('class', 'review-btn')
+        reviewBtn.textContent = 'x'
+        reviewBtn.addEventListener('click', function () {
+            deleteReviewFromServer.comment.id
+        })
+        pReview.append(reviewBtn)
+        previewBox.append(pReview)
+    }
 
-    pReview.append(reviewBtn)
 
-    previewBox.append(pReview)
+
     reviewDiv.append(h3TitleReview, previewBox)
 
     companyWraper.append(wraperReviewsDiv)
@@ -624,21 +627,25 @@ function signInModal() {
 }
 
 function signIn(email, password) {
-    return fetch(`http://localhost:3000/users/${email}`)
+    return fetch(`http://localhost:3000/users/`)
         .then(function (resp) {
             return resp.json()
         })
-        .then(function (user) {
-            if (user.password === password) {
-                // we know the user signed in successfully
-                alert('Welcome')
-                state.user = user
-                render()
-            } else {
-                // we know the user failed to sign in
-                alert('Wrong email/password. Please try again.')
-            }
-        })
+    // return fetch(`http://localhost:3000/users/${email}`)
+    //     .then(function (resp) {
+    //         return resp.json()
+    //     })
+    // .then(function (user) {
+    //     if (user.password === password) {
+    //         // we know the user signed in successfully
+    //         alert('Welcome')
+    //         state.user = user
+    //         render()
+    //     } else {
+    //         // we know the user failed to sign in
+    //         alert('Wrong email/password. Please try again.')
+    //     }
+    // })
 }
 
 function renderModal() {
@@ -814,6 +821,11 @@ function init() {
     })
     getReviewsFromServer().then(function (review) {
         state.reviews = review
+        render()
+    })
+
+    signIn().then(function (users) {
+        state.user = users
         render()
     })
 }
