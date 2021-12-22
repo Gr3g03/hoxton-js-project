@@ -56,6 +56,20 @@ function updateReviewsOnServer(content) {
     }).then(resp => resp.json())
 }
 
+function createJobOnServer(company_name, title, description) {
+    return fetch('http://localhost:3000/data', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            company_name: company_name,
+            title: title,
+            description: description
+        })
+    }).then(resp => resp.json())
+}
+
 function filterSearchedElements() {
     document.body.innerHTML = ''
     let elemetsToDisplay = state.companies
@@ -369,34 +383,49 @@ function companyReviews(mainEl) {
     const reviewsForm = document.createElement('form')
     reviewsForm.setAttribute('class', 'add-reviws-form')
     formSection.append(reviewsForm)
+    formSection.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        createJobOnServer(reviewsForm.companyname.value, reviewsForm.title.value,
+            reviewsForm.description.value)
+            .then(function (reviewsFromServer) {
+                state.companies.push(reviewsFromServer)
+            })
+    })
 
 
-    const inputImgEl = document.createElement('input')
-    inputImgEl.setAttribute('class', 'input-img')
-    inputImgEl.setAttribute('type', 'text')
-    inputImgEl.setAttribute('placeholder', 'Enter image Url')
+    // const inputImgEl = document.createElement('input')
+    // inputImgEl.setAttribute('class', 'input-img')
+    // inputImgEl.setAttribute('type', 'text')
+    // inputImgEl.setAttribute('placeholder', 'Enter image Url')
+    // inputImgEl.setAttribute('name', 'img')
+
 
     const companyNameEl = document.createElement('input')
     companyNameEl.setAttribute('type', 'text')
     companyNameEl.setAttribute('class', 'input-company-name')
     companyNameEl.setAttribute('placeholder', 'Enter company name')
+    companyNameEl.setAttribute('name', 'companyname')
 
     const titleNameEl = document.createElement('input')
     titleNameEl.setAttribute('class', 'input-title')
     titleNameEl.setAttribute('type', 'text')
     titleNameEl.setAttribute('placeholder', 'Enter job title')
+    titleNameEl.setAttribute('name', 'title')
 
     const descriptionEl = document.createElement('input')
     descriptionEl.setAttribute('class', 'description-el')
     descriptionEl.setAttribute('type', 'text')
     descriptionEl.setAttribute('placeholder', 'Enter description')
+    descriptionEl.setAttribute('name', 'description')
 
     const submitBtn = document.createElement('button')
     submitBtn.setAttribute('class', 'submit-button')
     submitBtn.setAttribute('type', 'submit')
     submitBtn.textContent = 'Submit'
 
-    reviewsForm.append(inputImgEl, companyNameEl, titleNameEl, descriptionEl, submitBtn)
+    // inputImgEl,
+    reviewsForm.append(companyNameEl, titleNameEl, descriptionEl, submitBtn)
     mainEl.append(companyWraper, formSection)
 
 
@@ -580,26 +609,14 @@ function signInModal() {
         event.stopPropagation()
     })
 
-    // const closeModal = document.createElement('button')
-    // closeModal.setAttribute('class', 'modal-close-btn')
-    // closeModal.textContent = 'X'
-    // closeModal.addEventListener('click', function btn() {
-    //     state.modal = ''
-    //     render()
-    // })
 
     const signInForm = document.createElement('form')
     signInForm.setAttribute('class', 'signin-form')
     signInForm.addEventListener('submit', function (event) {
         event.preventDefault()
-
-        // sign the user in
         signIn(emailInput.value, passwordInput.value)
-
-        // close the modal
         state.modal = ''
 
-        // render
         render()
     })
 
@@ -648,26 +665,24 @@ function signInModal() {
     document.body.append(searchBtnWrapper)
 }
 
-function signIn(email, password) {
-    return fetch(`http://localhost:3000/users/`)
-        .then(function (resp) {
-            return resp.json()
-        })
-    // return fetch(`http://localhost:3000/users/${email}`)
+function signIn(id, password) {
+    // return fetch(`http://localhost:3000/users/`)
     //     .then(function (resp) {
     //         return resp.json()
     //     })
-    // .then(function (user) {
-    //     if (user.password === password) {
-    //         // we know the user signed in successfully
-    //         alert('Welcome')
-    //         state.user = user
-    //         render()
-    //     } else {
-    //         // we know the user failed to sign in
-    //         alert('Wrong email/password. Please try again.')
-    //     }
-    // })
+    return fetch(`http://localhost:3000/users/${id}`)
+        .then(function (resp) {
+            return resp.json()
+        })
+        .then(function (user) {
+            if (user.password === password) {
+                alert('Welcome')
+                state.user = user
+                render()
+            } else {
+                alert('Wrong email/password. Please try again.')
+            }
+        })
 }
 
 function renderModal() {
@@ -846,9 +861,8 @@ function init() {
         render()
     })
 
-    signIn().then(function (users) {
-        state.user = users
-        render()
-    })
+    // signIn().then(function (users) {
+    //     state.user = users
+    // })
 }
 init()
