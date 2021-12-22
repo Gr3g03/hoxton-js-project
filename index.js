@@ -1,6 +1,7 @@
 
 const state = {
     companies: '',
+    reviews: '',
     user: null,
     pages: ['find jobs', 'find saleries', 'company reviews', 'upload resume', 'sign in'],
     selectedPage: '',
@@ -18,6 +19,12 @@ function fetchDataFromServer() {
         })
 }
 
+function getReviewsFromServer() {
+    return fetch('http://localhost:3000/reviews')
+        .then(function (resp) {
+            return resp.json()
+        })
+}
 
 function deleteReviewFromServer(id) {
     return fetch(`http://localhost:3000/reviews/${id}`, {
@@ -800,9 +807,13 @@ function render() {
 
 function init() {
 
-    fetchDataFromServer().then(companiesData => state.companies = companiesData)
+    // fetchDataFromServer().then(companiesData => state.companies = companiesData)
     fetchDataFromServer().then(function (companiesData) {
         state.companies = companiesData
+        render()
+    })
+    getReviewsFromServer().then(function (review) {
+        state.reviews = review
         render()
     })
 }
