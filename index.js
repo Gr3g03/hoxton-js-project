@@ -211,7 +211,7 @@ function renderTopJobsSection(item, recentSearches) {
 
     const imgEl = document.createElement('img')
     imgEl.setAttribute('class', 'logo-img')
-    imgEl.setAttribute('src', item.image)
+    imgEl.setAttribute('src', item.images)
     imgEl.setAttribute('alt', '#')
 
     divLogoEL.append(imgEl)
@@ -286,7 +286,7 @@ function companyReviews(mainEl) {
 
     const imageEL = document.createElement('img')
     imageEL.setAttribute('class', 'product__img')
-    imageEL.setAttribute('src', `./assets/accounting.svg`)
+    imageEL.setAttribute('src', state.selectedItem.images)
     imageEL.setAttribute('alt', '#')
 
 
@@ -789,19 +789,23 @@ function UploadModal() {
     p5el.textContent = 'Role'
 
 
+    const employerLabel = document.createElement('label')
+    employerLabel.textContent = 'Employer'
     const employerInput = document.createElement('input')
     employerInput.setAttribute('class', 'role')
     employerInput.setAttribute('name', 'role')
     employerInput.setAttribute('type', 'radio')
-    employerInput.textContent = 'Employer'
+    employerLabel.append(employerInput)
 
+    const jobSeekerLabel = document.createElement('label')
+    jobSeekerLabel.textContent = 'Employee'
     const jobSeeker = document.createElement('input')
     jobSeeker.setAttribute('class', 'role')
     jobSeeker.setAttribute('name', 'role')
     jobSeeker.setAttribute('type', 'radio')
-    jobSeeker.textContent = 'Job Seeker'
+    jobSeekerLabel.append(jobSeeker)
 
-    RoleLabel.append(p5el, employerInput, jobSeeker)
+    RoleLabel.append(p5el, employerLabel, jobSeekerLabel)
 
 
     const emailLabel = document.createElement('label')
