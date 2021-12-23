@@ -485,13 +485,13 @@ function renderMain() {
         inputJobEl.setAttribute('class', 'search-box-title')
         inputJobEl.setAttribute('type', 'search')
         inputJobEl.setAttribute('name', 'searchByType')
-        inputJobEl.setAttribute('placeholder', 'job title, keywords')
+        inputJobEl.setAttribute('placeholder', 'Enter company name')
 
         const inputCityEl = document.createElement('input')
         inputCityEl.setAttribute('class', 'search-box-city')
         inputJobEl.setAttribute('name', 'searchByLocation')
         inputCityEl.setAttribute('type', 'search')
-        inputCityEl.setAttribute('placeholder', 'city, state')
+        inputCityEl.setAttribute('placeholder', 'Enter your location')
 
         const searchButton = document.createElement('button')
         searchButton.setAttribute('class', 'search-button')
