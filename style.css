@@ -282,8 +282,13 @@ main{
 .company-content{
     display: grid;
     background-color: rgba(245, 245, 245, 0.466);
+    justify-items: center;
 }
 
+.company-content img {
+    width: 15rem;
+
+}
 
 .wraper-reviews{
     background-color: rgba(245, 245, 245, 0.466);
