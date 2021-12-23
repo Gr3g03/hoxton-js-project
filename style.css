@@ -110,6 +110,24 @@ body{
     border-radius: 5rem;
     width: 20vw;
 }
+.name-input{
+    height: 1.5rem;
+    border-radius: 5rem;
+    width: 20vw;
+}
+.last-name-input{
+    height: 1.5rem;
+    border-radius: 5rem;
+    width: 20vw;
+}
+
+.birthdayinput{
+    height: 1.5rem;
+    border-radius: 5rem;
+    width: 20vw;
+}
+
+
 
 .password-input{
     height: 1.5rem;
@@ -122,6 +140,17 @@ body{
     border-radius: 5rem;
     width: 20vw;
     background-color: rgba(54, 54, 197, 0.753);
+}
+
+
+.gender-Label{
+    display: grid;
+    gap: 0.2rem;
+}
+
+.role-Label{
+    display: grid;
+    gap: 0.2rem;
 }
 
 .header-logo{
