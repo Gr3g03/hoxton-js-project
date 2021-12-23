@@ -135,10 +135,23 @@ body{
     padding-left: 0.5rem;
 }
 
-.form-section h5{
+
+.form-section {
+    padding-bottom: 1rem;
+    background-color: rgb(206, 203, 199);
+    border-radius: 10px;
+
+}
+
+
+.form-section h3{
     text-align: center;
     margin-bottom: 0.2rem;
+    padding: 1rem;
+    color: royalblue;
 }
+
+
 
 .input-company-name{
     border: 0.1px solid black;

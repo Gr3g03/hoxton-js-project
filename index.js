@@ -373,9 +373,9 @@ function companyReviews(mainEl) {
 
     const formSection = document.createElement('section')
     formSection.setAttribute('class', 'form-section')
-    const h5EL = document.createElement('h5')
-    h5EL.textContent = 'Enter A job'
-    formSection.append(h5EL)
+    const h3EL = document.createElement('h3')
+    h3EL.textContent = 'Post your job'
+    formSection.append(h3EL)
 
     const reviewsForm = document.createElement('form')
     reviewsForm.setAttribute('class', 'add-reviws-form')
