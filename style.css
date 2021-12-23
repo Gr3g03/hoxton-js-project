@@ -109,30 +109,60 @@ body{
     height: 1.5rem;
     border-radius: 5rem;
     width: 20vw;
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
 }
 .name-input{
     height: 1.5rem;
     border-radius: 5rem;
     width: 20vw;
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
 }
 .last-name-input{
     height: 1.5rem;
     border-radius: 5rem;
     width: 20vw;
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
 }
 
 .birthdayinput{
     height: 1.5rem;
     border-radius: 5rem;
     width: 20vw;
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
 }
 
+.form-section h5{
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
 
+.input-company-name{
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
+    border-radius: 5rem ;
+}
+.input-title{
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
+    border-radius: 5rem ;
+}
+
+.description-el{
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
+    border-radius: 5rem ;
+}
 
 .password-input{
     height: 1.5rem;
     border-radius: 5rem;
     width: 20vw;
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
 }
 
 .signin-button{
@@ -140,8 +170,15 @@ body{
     border-radius: 5rem;
     width: 20vw;
     background-color: rgba(54, 54, 197, 0.753);
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
 }
 
+.comment-input{
+    border: 0.1px solid black;
+    padding-left: 0.5rem;
+    border-radius: 5rem;
+}
 
 .gender-Label{
     display: grid;
@@ -344,6 +381,10 @@ p.description-footer-reviews {
 button.submit-button {
     background-color: royalblue;
     color: white;
+    border-radius: 5rem ;
+    height: 1.1rem;
+    width: 3rem;
+    border: none;
 }
 
 .footer-reviews-section{
