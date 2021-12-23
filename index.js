@@ -373,6 +373,9 @@ function companyReviews(mainEl) {
 
     const formSection = document.createElement('section')
     formSection.setAttribute('class', 'form-section')
+    const h5EL = document.createElement('h5')
+    h5EL.textContent = 'Enter A job'
+    formSection.append(h5EL)
 
     const reviewsForm = document.createElement('form')
     reviewsForm.setAttribute('class', 'add-reviws-form')
@@ -425,8 +428,10 @@ function companyReviews(mainEl) {
 
     const footerReviews = document.createElement('section')
     footerReviews.setAttribute('class', 'footer-reviews-section')
+
     const displayJobs = document.createElement('div')
     displayJobs.setAttribute('class', 'job-section')
+
     for (const job of state.companies) {
 
         const divel = document.createElement('div')
