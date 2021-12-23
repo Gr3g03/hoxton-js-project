@@ -11,7 +11,7 @@ img{
 header{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 50px;
+    height: 70px;
     border-bottom: 0.3px solid rgb(190, 190, 190);
     align-content: center; 
     background-color: #013a63;
@@ -20,7 +20,7 @@ header{
 body{
     font-family: sans-serif;
     display: grid;
-    grid-template-rows: 50px 1fr 150px;
+    grid-template-rows: 70px 1fr 150px;
     /* border: 1px solid black; */
 }
 
@@ -288,10 +288,11 @@ main{
 
 p.text-review {
     padding: 0.3rem;
-    border: solid 1px grey;
-    border-radius: 10px;
+    border-bottom: solid 1px grey;
+
     
 }
+
 
 button.submit-button {
     background-color: royalblue;
@@ -300,6 +301,7 @@ button.submit-button {
 
 .footer-reviews-section{
     display: grid;
+    
 }
 
 .div-container{
@@ -307,6 +309,7 @@ button.submit-button {
     gap: 0.2rem;
     text-align: center;
     background-color: rgba(245, 245, 245, 0.466);
+    padding: 0.5rem;
 }
 
 .job-section{
