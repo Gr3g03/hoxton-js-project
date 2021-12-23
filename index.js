@@ -70,7 +70,6 @@ function createJobOnServer(company_name, title, description) {
 }
 
 function filterSearchedElements(companies) {
-    // document.body.innerHTML = ''
     let elementsToDisplay = companies
     if (state.searchByLocation !== '') {
         elementsToDisplay = elementsToDisplay.filter(items => {
@@ -78,10 +77,7 @@ function filterSearchedElements(companies) {
             )
         })
     }
-    // for (item of elemetsToDisplay) {
-    //     renderMain(item)
-    // }
-    // return filterSearchedElements()
+
     return elementsToDisplay
 }
 
