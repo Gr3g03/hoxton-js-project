@@ -230,6 +230,12 @@ main{
     gap: 1rem;
     justify-items: center;
   }
+
+  .company-data li {
+      color: slateblue;
+  }
+
+
   
   .about-info {
     display: grid;
