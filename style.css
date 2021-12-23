@@ -185,16 +185,20 @@ main{
 .recent-searches {
     display: grid;
     height: 60px;
-    gap: 0.5rem;
+    gap: 1.5rem;
     /* width: 100%; */
     height: 100%;
+
+    
     
   }
   
   .recent-searches__ {
     display: grid;
     grid-template-columns: 80px 1fr auto;
-    background-color: rgba(214, 214, 214, 0.13);   
+    background-color: rgba(214, 214, 214, 0.25);
+    border-radius: 15px; 
+    padding: 0.8rem;
   }
 
 
@@ -299,6 +303,9 @@ p.text-review {
     
 }
 
+p.description-footer-reviews {
+    color: rgba(0, 0, 0, 0.65);
+}
 
 button.submit-button {
     background-color: royalblue;
