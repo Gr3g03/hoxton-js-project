@@ -168,7 +168,7 @@ function renderHeader() {
     uploadLi.setAttribute('class', 'upload')
     const uploadALi = document.createElement('a')
     uploadALi.setAttribute('href', '#')
-    uploadALi.textContent = 'Sing Up'
+    uploadALi.textContent = 'Sign Up'
     uploadALi.addEventListener('click', function () {
         state.modal = 'upload resume'
         UploadModal(uploadALi)
@@ -500,18 +500,12 @@ function renderMain() {
         // searchSection.append(postFindEl)
 
         const h3PostEl = document.createElement('h3')
-        const aPostEl = document.createElement('a')
-        aPostEl.setAttribute('href', '#')
-        aPostEl.textContent = "Post your job"
+        h3PostEl.textContent = "THE PERFECT PLACE TO FIND THE BEST WORKER!"
 
-        h3PostEl.append(aPostEl)
 
         const h3FindEl = document.createElement('h3')
-        const aFindEl = document.createElement('a')
-        aFindEl.setAttribute('href', '#')
-        aFindEl.textContent = "Find employees"
+        h3FindEl.textContent = "THE BEST PLACE TO FIND YOUR DREAM JOB!"
 
-        h3FindEl.append(aFindEl)
         searchSection.append(searchform, postFindEl)
 
         postFindEl.append(h3PostEl, h3FindEl)

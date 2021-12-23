@@ -205,11 +205,14 @@ main{
 }
 
 
-.post-find a{
-    text-decoration: none;
-    color: black;
+.post-find {
+ padding: 1rem;
 }
 
+.post-find h3 {
+    padding: 1rem;
+    color: #013a63;
+}
 
 .recent-searches {
     display: grid;
