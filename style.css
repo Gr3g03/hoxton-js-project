@@ -186,7 +186,7 @@ main{
     display: grid;
     height: 60px;
     gap: 1.5rem;
-    /* width: 100%; */
+    width: 50%;
     height: 100%;
 
     
