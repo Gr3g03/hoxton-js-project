@@ -134,10 +134,10 @@ main{
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding: 1rem;
+    padding: 1.5rem;
     justify-items: center;
     /* border: 1px solid   black; */
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .search-section{
@@ -264,6 +264,8 @@ main{
     width: 100%;
     height: 100%;
     text-align: center;
+    background-color: whitesmoke;
+    padding: 1rem;
 }
 
 
@@ -275,9 +277,26 @@ main{
 
 .wraper-reviews{
     background-color: rgba(245, 245, 245, 0.466);
+    padding: 1rem;
 }
 
 
+
+.review-div {
+    padding: 1rem;
+}
+
+p.text-review {
+    padding: 0.3rem;
+    border: solid 1px grey;
+    border-radius: 10px;
+    
+}
+
+button.submit-button {
+    background-color: royalblue;
+    color: white;
+}
 
 .footer-reviews-section{
     display: grid;
