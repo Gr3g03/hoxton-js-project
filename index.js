@@ -833,7 +833,7 @@ function UploadModal() {
     const signInBtnLabel = document.createElement('label')
 
     const signInBtn = document.createElement('button')
-    signInBtn.textContent = 'SIGN IN'
+    signInBtn.textContent = 'SIGN UP'
     signInBtn.setAttribute('class', 'signin-button')
 
     signInBtnLabel.append(signInBtn)
