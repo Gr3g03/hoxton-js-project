@@ -4,7 +4,7 @@
       "id": 1,
       "slug": "Auditues i brendshem i sitemeve financare",
       "company_name": "Delta Group",
-      "title": "Audit Finace",
+      "title": "Audit Finance",
       "description": "Kompania Deutschcolor pjesë e DELTA GROUP, sjell në Shqipëri traditën Gjermane 100-vjeçare në prodhimin e bojërave për ambjente të brendshme dhe të jashtme.",
       "remote": false,
       "url": "http://www.deutschcolor.de",
@@ -12,7 +12,7 @@
       "job_types": "Full Time",
       "location": "Tirane",
       "created_at": "20.12.2021",
-      "salary": 330
+      "salary": 600
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "job_types": "Full time",
       "location": "Tirane",
       "created_at": 20.12,
-      "salary": 330
+      "salary": 300
     },
     {
       "id": 3,
@@ -54,7 +54,7 @@
       "job_types": "Full time",
       "location": "Tirane",
       "created_at": 20.12,
-      "salary": 330
+      "salary": 500
     },
     {
       "id": 5,
@@ -68,7 +68,7 @@
       "job_types": "full time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330
+      "salary": 350
     },
     {
       "id": 6,
@@ -96,7 +96,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330
+      "salary": 500
     },
     {
       "id": 8,
@@ -110,7 +110,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330
+      "salary": 450
     },
     {
       "id": 9,
@@ -124,7 +124,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330
+      "salary": 530
     },
     {
       "id": 10,
@@ -138,7 +138,7 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330
+      "salary": 300
     }
   ],
   "reviews": [
