@@ -108,7 +108,7 @@ function renderHeader() {
     findJobsLi.setAttribute('class', 'left-nav-items')
     const findJobsAEl = document.createElement('a')
     findJobsAEl.setAttribute('href', '#')
-    findJobsAEl.textContent = 'Find Jobs'
+    findJobsAEl.textContent = 'HIRE ME!'
     findJobsAEl.addEventListener('click', function () {
         state.selectedPage = 'Find Jobs'
         state.selectedItem = null
@@ -118,12 +118,12 @@ function renderHeader() {
     })
     findJobsLi.append(findJobsAEl)
 
-    const findSalariesLi = document.createElement('li')
-    findSalariesLi.setAttribute('class', 'left-nav-items')
-    const findSalariesAEl = document.createElement('a')
-    findSalariesAEl.setAttribute('href', '#')
-    findSalariesAEl.textContent = 'Find Salaries'
-    findSalariesLi.append(findSalariesAEl)
+    // const findSalariesLi = document.createElement('li')
+    // findSalariesLi.setAttribute('class', 'left-nav-items')
+    // const findSalariesAEl = document.createElement('a')
+    // findSalariesAEl.setAttribute('href', '#')
+    // findSalariesAEl.textContent = 'Find Salaries'
+    // findSalariesLi.append(findSalariesAEl)
 
     const reviewsLi = document.createElement('li')
     reviewsLi.setAttribute('class', 'left-nav-items')
@@ -148,7 +148,7 @@ function renderHeader() {
     headerLogoAEl.append(headerLogoh1)
 
 
-    leftNavUl.append(findJobsLi, findSalariesLi, reviewsLi, headerLogoLi)
+    leftNavUl.append(findJobsLi, reviewsLi, headerLogoLi)
 
     //Right Header
 
