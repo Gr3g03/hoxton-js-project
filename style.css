@@ -38,6 +38,11 @@ body{
 .left-nav a{
     text-decoration: none;  
     color: whitesmoke;;
+
+}
+
+.left-nav-items :hover {
+    color: aqua;
 }
 
 .left-nav-items{
