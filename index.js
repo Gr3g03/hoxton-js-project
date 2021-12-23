@@ -762,7 +762,7 @@ function UploadModal() {
     p4el.textContent = 'Gender'
 
     const maleLabel = document.createElement('label')
-    maleLabel.textContent = 'Male'
+    maleLabel.textContent = 'Guys'
     const maleGenderInput = document.createElement('input')
     maleGenderInput.setAttribute('class', 'gender')
     maleGenderInput.setAttribute('name', 'gender')
@@ -772,7 +772,7 @@ function UploadModal() {
 
 
     const feMaleLabel = document.createElement('label')
-    feMaleLabel.textContent = 'Female'
+    feMaleLabel.textContent = 'Girls'
     const femaleGenderInput = document.createElement('input')
     femaleGenderInput.setAttribute('class', 'gender')
     femaleGenderInput.setAttribute('name', 'gender')
