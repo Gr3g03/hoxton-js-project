@@ -37,7 +37,9 @@ body{
 
 .left-nav a{
     text-decoration: none;  
-    color: whitesmoke;;
+    color: whitesmoke;
+    font-weight: 600;
+
 
 }
 
@@ -137,8 +139,8 @@ body{
 
 
 .form-section {
-    padding-bottom: 1rem;
-    background-color: rgb(206, 203, 199);
+    padding: 1.5rem;
+    background-color: rgb(235, 232, 228);
     border-radius: 10px;
 
 }
@@ -411,7 +413,7 @@ button.submit-button {
 }
 
 .add-reviews-form {
-    width: 60%
+    width: 60%;
 }
 
 .div-container{
