@@ -365,6 +365,8 @@ main{
     display: grid;
     background-color: rgba(245, 245, 245, 0.466);
     justify-items: center;
+    border-right: 1px solid blue;
+    padding: 0.5rem;
 }
 
 .company-content img {
@@ -406,6 +408,10 @@ button.submit-button {
 .footer-reviews-section{
     display: grid;
     
+}
+
+.add-reviews-form {
+    width: 60%
 }
 
 .div-container{
