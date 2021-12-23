@@ -168,7 +168,7 @@ function renderHeader() {
     uploadLi.setAttribute('class', 'upload')
     const uploadALi = document.createElement('a')
     uploadALi.setAttribute('href', '#')
-    uploadALi.textContent = 'Upload Resume'
+    uploadALi.textContent = 'Sing Up'
     uploadALi.addEventListener('click', function () {
         state.modal = 'upload resume'
         UploadModal(uploadALi)
