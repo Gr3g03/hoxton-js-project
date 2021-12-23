@@ -12,7 +12,8 @@
       "job_types": "Full Time",
       "location": "Tirane",
       "created_at": "20.12.2021",
-      "salary": 600
+      "salary": 600,
+      "images": ".assets/accounting.svg"
     },
     {
       "id": 2,
@@ -26,7 +27,8 @@
       "job_types": "Full time",
       "location": "Tirane",
       "created_at": 20.12,
-      "salary": 300
+      "salary": 300,
+      "images": "https://freesvg.org/img/Best-seller-stamp.png"
     },
     {
       "id": 3,
@@ -40,7 +42,8 @@
       "job_types": "Part time",
       "location": "Durres",
       "created_at": 20.12,
-      "salary": 330
+      "salary": 330,
+      "images": "https://freesvg.org/img/Sale.png"
     },
     {
       "id": 4,
@@ -54,7 +57,8 @@
       "job_types": "Full time",
       "location": "Tirane",
       "created_at": 20.12,
-      "salary": 500
+      "salary": 500,
+      "images": ".assets/accounting.svg"
     },
     {
       "id": 5,
@@ -68,7 +72,8 @@
       "job_types": "full time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 350
+      "salary": 350,
+      "images": "https://freesvg.org/img/Hotel-Information.png"
     },
     {
       "id": 6,
@@ -82,7 +87,8 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 330
+      "salary": 330,
+      "images": "https://freesvg.org/img/CCTV-247.png"
     },
     {
       "id": 7,
@@ -96,7 +102,8 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 500
+      "salary": 500,
+      "images": "https://freesvg.org/img/Sale.png"
     },
     {
       "id": 8,
@@ -110,7 +117,8 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 450
+      "salary": 450,
+      "images": "https://freesvg.org/img/proof-of-design.png"
     },
     {
       "id": 9,
@@ -124,7 +132,8 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 530
+      "salary": 530,
+      "images": "https://freesvg.org/img/1466872420.png"
     },
     {
       "id": 10,
@@ -138,7 +147,8 @@
       "job_types": "part time",
       "location": "Durres",
       "created_at": 1638006722,
-      "salary": 300
+      "salary": 300,
+      "images": "https://freesvg.org/img/kellnerwaiter-0036074zgrukhid3256374coloring.png"
     }
   ],
   "reviews": [

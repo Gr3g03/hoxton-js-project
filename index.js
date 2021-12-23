@@ -211,7 +211,7 @@ function renderTopJobsSection(item, recentSearches) {
 
     const imgEl = document.createElement('img')
     imgEl.setAttribute('class', 'logo-img')
-    imgEl.setAttribute('src', './assets/accounting.svg')
+    imgEl.setAttribute('src', item.image)
     imgEl.setAttribute('alt', '#')
 
     divLogoEL.append(imgEl)
