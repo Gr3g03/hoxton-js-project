@@ -761,24 +761,26 @@ function UploadModal() {
     const p4el = document.createElement('p')
     p4el.textContent = 'Gender'
 
-
+    const maleLabel = document.createElement('label')
+    maleLabel.textContent = 'male'
     const maleGenderInput = document.createElement('input')
     maleGenderInput.setAttribute('class', 'gender')
     maleGenderInput.setAttribute('name', 'gender')
     maleGenderInput.setAttribute('type', 'radio')
+    maleGenderInput.setAttribute = ('value', 'Male')
+    maleLabel.append(maleGenderInput)
 
 
+    const feMaleLabel = document.createElement('label')
+    feMaleLabel.textContent = 'Female'
     const femaleGenderInput = document.createElement('input')
     femaleGenderInput.setAttribute('class', 'gender')
     femaleGenderInput.setAttribute('name', 'gender')
     femaleGenderInput.setAttribute('type', 'radio')
+    femaleGenderInput.setAttribute = ('value', 'Female')
+    feMaleLabel.append(femaleGenderInput)
 
-
-    const femaleH4El = document.createElement('h4')
-    femaleH4El.textContent = 'Female'
-    femaleGenderInput.append(femaleH4El)
-
-    genderLabel.append(p4el, maleGenderInput, femaleGenderInput)
+    genderLabel.append(p4el, maleLabel, feMaleLabel)
 
 
     const RoleLabel = document.createElement('label')
